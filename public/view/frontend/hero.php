@@ -43,7 +43,7 @@
                         <span class="name">Erwan GOUEZ</span>
                         <span class="skills">- Développeur WEB -</span>
                         <hr class="star-light">
-                        <span class="skills">N'ayez plus peur d'affronter le WEB, BOOSTEZ l'image de votre entreprise</span>
+                        <span class="skills">BOOSTEZ l'image de votre entreprise avec votre site WEB</span>
                     </div>
                 </div>
             </div>

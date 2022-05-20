@@ -15,32 +15,48 @@
     </p>
 </div>
 
-<h2>Commentaires</h2>
 
-<form action="index.php?action=addComment&amp;id=<?= $post['post_id'] ?>" method="post">
-    <div>
-        <label for="author">Auteur</label><br />
-        <input type="text" id="author" name="author" />
-    </div>
-    <div>
-        <label for="comment">Commentaire</label><br />
-        <textarea id="comment" name="comment"></textarea>
-    </div>
-    <div>
-        <input type="submit" />
-    </div>
-</form>
-
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10">
+            <h2>Commentaires</h2>
+            <form action="index.php?action=addComment&amp;id=<?= $post['post_id'] ?>" method="post">
+                <div>
+                    <label for="author">Auteur</label><br />
+                    <input type="text" id="author" name="author" />
+                </div>
+                <div>
+                    <label for="comment">Commentaire</label><br />
+                    <textarea id="comment" name="comment"></textarea>
+                </div>
+                <div>
+                    <br/>
+                </div>
+                <div>
+                    <input type="submit" />
+                </div>
+            </form>
+            </div>
+    </div>  
+</div>
 <?php
 
 while ($comment = $comments->fetch())
 {
 ?>
-    <p>le <?= $comment['comment_creation_date_fr'] ?></p>
-    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10">
+            <p>le <?= $comment['comment_creation_date_fr'] ?></p>
+            <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+        </div>
+    </div>  
+</div>
 <?php
 }
 ?>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
+<?php include('footer.php'); ?>
