@@ -1,7 +1,8 @@
 <?php include('navigation.php'); ?>
-<button class="btn btn-success btn-lg" type="submit" action="index.php?action=connect" name="J'ai déjà un compte">
+
 <?php ob_start(); ?>
 <h1><?php echo($post['title']) ?></h1>
+<br/>
 <p><a href="index.php">Retour à la liste des billets</a></p>
 
 <div class="news">
@@ -18,9 +19,9 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-10">
+        <div class="col-lg-10 text-center">
             <h2>Commentaires</h2>
-
+<?php if (isset($_SESSION['PSEUDO'])) :?>
             <form action="index.php?action=addComment&amp;id=<?= $post['post_id'] ?>" method="post">
                 <div>
                     <label for="author">Auteur</label><br />
@@ -37,7 +38,11 @@
                     <input type="submit" />
                 </div>
             </form>
-            </div>
+            
+<?php else : ?>
+    <i>'Pour écrire un commentaire, vous devez vous identifier'</i>
+<?php endif; ?>
+        </div>
     </div>  
 </div>
 <?php
@@ -47,7 +52,7 @@ while ($comment = $comments->fetch())
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-lg-10">
+        <div class="col-lg-10 text-center">
             <p>le <?= $comment['comment_creation_date_fr'] ?></p>
             <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
         </div>

@@ -10,7 +10,7 @@ class CommentManager extends Manager
     {
         $db = $this->dbConnect();
         $comments = $db->prepare('SELECT comment_id, comment, DATE_FORMAT(comment_creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_creation_date_fr 
-        FROM comment WHERE post_id = ? ORDER BY comment_creation_date DESC');
+        FROM comment WHERE post_id = ? AND comment_status = "1" ORDER BY comment_creation_date DESC');
         $comments->execute(array($postId));
 
         return $comments;

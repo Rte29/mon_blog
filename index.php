@@ -39,7 +39,10 @@ try {
         elseif ($_GET['action'] == 'checkLogin') {
             checkLogin();
         }
-               
+        elseif ($_GET['action'] == 'disconnect') {
+            disconnect();
+        } 
+        
         }       
     
     else {

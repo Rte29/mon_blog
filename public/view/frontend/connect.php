@@ -35,7 +35,14 @@ include('navigation.php');
 
 </head>
 <body>
-
+<?php if(isset($_SESSION['SUBSCRIBE'])): ?>
+    <div class="alert alert-success" role="alert">
+    This is a success alert—check it out!
+  </div>
+<?php endif; ?>
+<?php 
+unset ($_SESSION['SUBSCRIBE']);
+?>
 <section id="contact">
         <div class="container">
             <div class="row">

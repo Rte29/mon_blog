@@ -78,11 +78,15 @@ $message="";
             if(empty($message)){
                 
             $newUser = $addUser->checkUserLogin($pseudo);
-                   
+            
                 if($newUser==false) 
                 {   
                     
                     $newUser = $addUser->setUser($name, $firstName, $birth, $email, $pseudo, $pwd);
+                    $_SESSION['SUBSCRIBE']= $newUser ['name'];
+                    require('public/view/frontend/connect.php');
+
+                    
                 }
                 else
                 {
@@ -110,11 +114,16 @@ function checkLogin()
         
         if($log==false)
         {
-            echo('non');
+            
+            connect();
+            echo('Les informations saisie ne permettent pas d\'identifier : ' . $_POST['pseudo'] );
         }
         else
         {
-            echo('oui');
+            $_SESSION['ADMIN'] = $log['admin_role'];
+            $_SESSION['PSEUDO'] = $log['username'];
+            listPosts();
+            
         }
 
     }
@@ -124,4 +133,10 @@ function checkLogin()
              
     }
 
+}
+
+function disconnect()
+{
+    session_destroy();
+    listPosts();
 }

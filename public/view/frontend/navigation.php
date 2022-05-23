@@ -65,6 +65,9 @@
                             <li><a href="index.php?action=connect">j'ai un compte</a></li>
                         </ul>
                     </li>
+                    <li class="page-scroll">
+                        <a href="index.php?action=disconnect">Deconnexion</a>
+                    </li>
                 </ul>
             </div>
         </div>
