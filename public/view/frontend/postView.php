@@ -1,4 +1,5 @@
 <?php include('navigation.php'); ?>
+<button class="btn btn-success btn-lg" type="submit" action="index.php?action=connect" name="J'ai déjà un compte">
 <?php ob_start(); ?>
 <h1><?php echo($post['title']) ?></h1>
 <p><a href="index.php">Retour à la liste des billets</a></p>
@@ -15,11 +16,11 @@
     </p>
 </div>
 
-
 <div class="container">
     <div class="row">
         <div class="col-lg-10">
             <h2>Commentaires</h2>
+
             <form action="index.php?action=addComment&amp;id=<?= $post['post_id'] ?>" method="post">
                 <div>
                     <label for="author">Auteur</label><br />

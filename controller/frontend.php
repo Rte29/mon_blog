@@ -5,6 +5,7 @@ session_start();
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/User.php');
+require_once('model/LoginManager.php');
 
 function listPosts()
 {
@@ -41,20 +42,25 @@ function addComment($postId, $comment)
     }
 }
 
-function connect()
+function subscribe()
 {
     require('public/view/frontend/subscribe.php');
 }
 
+function connect()
+{
+    require('public/view/frontend/connect.php');
+}
+
 function addUser()
 {
-$name =strtoupper($_POST['name']);
-$firstName =strtoupper($_POST['firstName']);
-$birth =$_POST['birthday'];
-$email =$_POST['email'];
-$pseudo =$_POST['pseudo'];
-$pwd =$_POST['pwd'];
-$newPwd =$_POST['newPwd'];
+$name =htmlspecialchars(strtoupper($_POST['name']));
+$firstName =htmlspecialchars(strtoupper($_POST['firstName']));
+$birth =htmlspecialchars($_POST['birthday']);
+$email =htmlspecialchars($_POST['email']);
+$pseudo =htmlspecialchars($_POST['pseudo']);
+$pwd =htmlspecialchars($_POST['pwd']);
+$newPwd =htmlspecialchars($_POST['newPwd']);
 $message="";
 
 
@@ -73,8 +79,9 @@ $message="";
                 
             $newUser = $addUser->checkUserLogin($pseudo);
                    
-                if(empty($tab)) 
+                if($newUser==false) 
                 {   
+                    
                     $newUser = $addUser->setUser($name, $firstName, $birth, $email, $pseudo, $pwd);
                 }
                 else
@@ -91,3 +98,30 @@ $message="";
         require('public/view/frontend/subscribe.php');
     }
 
+function checkLogin()
+{
+    $pseudo =htmlspecialchars($_POST['pseudo']);
+    $pwd=htmlspecialchars($_POST['pwd']);
+
+    if(isset($pseudo) || isset($pwd))
+    {
+        $login = new \Blog\Model\LoginManager();
+        $log = $login->login($pseudo, $pwd);
+        
+        if($log==false)
+        {
+            echo('non');
+        }
+        else
+        {
+            echo('oui');
+        }
+
+    }
+    else
+    {
+        throw new Exception('Vous devez renseigner tous les champs !');
+             
+    }
+
+}

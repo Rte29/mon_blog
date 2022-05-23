@@ -27,13 +27,21 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
+        elseif ($_GET['action'] == 'subscribe') {
+            subscribe();
+        }   
         elseif ($_GET['action'] == 'connect') {
             connect();
         }   
         elseif ($_GET['action'] == 'addUser') {
             addUser();
+        }
+        elseif ($_GET['action'] == 'checkLogin') {
+            checkLogin();
+        }
+               
         }       
-    }
+    
     else {
         listPosts();
     }

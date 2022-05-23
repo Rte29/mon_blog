@@ -60,7 +60,10 @@
                         <a href="#contact">Contact</a>
                     </li>
                     <li class="page-scroll">
-                    <a href="index.php?action=connect">identifiez-vous</a>
+                        <ul class="sous">
+                            <li><a href="index.php?action=subscribe">je m'inscrit</a></li>
+                            <li><a href="index.php?action=connect">j'ai un compte</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
