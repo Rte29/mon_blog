@@ -27,7 +27,8 @@ while ($data = $posts->fetch())
 }
 $posts->closeCursor();
 ?>
-<?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean(); 
+var_dump($_SESSION) ?>
 
 <?php require('template.php'); ?>
 <?php include('about.php'); ?>

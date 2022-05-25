@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Mon Blog</title>
+    <title>Freelancer - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -63,6 +63,7 @@
                         <ul class="sous">
                             <li><a href="index.php?action=subscribe">je m'inscrit</a></li>
                             <li><a href="index.php?action=connect">j'ai un compte</a></li>
+                            <li><?php if(isset($_SESSION['pseudo'])){echo('bonjour ' . $_SESSION['pseudo']);}?></li>
                         </ul>
                     </li>
                     <li class="page-scroll">

@@ -23,9 +23,8 @@ class Subscribe extends Manager
         $ins=$db->prepare('INSERT INTO user(last_name, first_name, birthday, email, admin_role, user_registration_date, user_update_date, username, pwd) 
         VALUES(?,?,?,?,0, NOW(), NOW(),?,?)');
         $ins->execute(array($name, $firstName, $birth, $email, $pseudo, md5($pwd)));
-
-        return $ins;
         
+        return $ins;
         
     }
 }

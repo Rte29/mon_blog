@@ -77,13 +77,11 @@ $message="";
 
             if(empty($message)){
                 
-            $newUser = $addUser->checkUserLogin($pseudo);
-            
-                if($newUser==false) 
+            $user = $addUser->checkUserLogin($pseudo);
+           
+                if($user==false) 
                 {   
-                    
                     $newUser = $addUser->setUser($name, $firstName, $birth, $email, $pseudo, $pwd);
-                    $_SESSION['SUBSCRIBE']= $newUser ['name'];
                     require('public/view/frontend/connect.php');
 
                     
@@ -91,6 +89,7 @@ $message="";
                 else
                 {
                     echo('Ce Pseudo existe déjà');
+                    exit;
                 }
             }
             else 
