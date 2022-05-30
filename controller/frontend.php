@@ -4,7 +4,7 @@ session_start();
 // Chargement des classes
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
-require_once('model/User.php');
+require_once('model/UserManager.php');
 require_once('model/LoginManager.php');
 
 function listPosts()
@@ -14,6 +14,21 @@ function listPosts()
 
     
     require('public/view/frontend/listPostView.php');
+}
+
+function readAll()
+{
+    $postManager = new \Blog\Model\PostManager();
+    $posts = $postManager->getAllPosts();
+
+    if(isset($_GET['id']))
+    {
+    require('public/view/frontend/postList.php');
+    }
+    else
+    {
+    require('public/view/backend/postList.php');
+    }
 }
 
 function post()
@@ -116,9 +131,11 @@ function checkLogin()
             
             connect();
             echo('Les informations saisie ne permettent pas d\'identifier : ' . $_POST['pseudo'] );
+            
         }
         else
         {
+            $_SESSION['AUTHOR'] = $log['id'];
             $_SESSION['ADMIN'] = $log['admin_role'];
             $_SESSION['PSEUDO'] = $log['username'];
             listPosts();

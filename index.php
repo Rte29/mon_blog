@@ -1,10 +1,14 @@
 <?php
 require('controller/frontend.php');
+require('controller/backend.php');
 
 try {
     if (isset($_GET['action'])) {
         if ($_GET['action'] == 'listPosts') {
             listPosts();
+        }
+        if ($_GET['action'] == 'readAll') {
+            readAll();
         }
         elseif ($_GET['action'] == 'post') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
@@ -42,7 +46,28 @@ try {
         elseif ($_GET['action'] == 'disconnect') {
             disconnect();
         } 
-        
+        elseif ($_GET['action'] == 'admin') {
+            admin();
+        } 
+        elseif ($_GET['action'] == 'postList') {
+            postList();
+        } 
+        elseif ($_GET['action'] == 'postAdmin') {
+            postAdmin();
+        } 
+        elseif ($_GET['action'] == 'addPost') {
+           addPosts();
+        } 
+        elseif ($_GET['action'] == 'setPost') {
+            setPost();
+         } 
+        elseif ($_GET['action'] == 'cancelPost') {
+            readAll();
+         } 
+         elseif ($_GET['action'] == 'cancel') {
+            cancel();
+         } 
+         
         }       
     
     else {

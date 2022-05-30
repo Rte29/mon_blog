@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>Mon Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -44,7 +44,36 @@
                 <a class="navbar-brand" href="index.php?action=listPosts">Mon Blog</a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+           
+<?php 
+    if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
+    ?>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="index.php?action=postList">Les articles</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#about">About</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#contact">Contact</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="index.php?action=admin">gestion admin</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="index.php?action=disconnect">Deconnexion</a>
+                </li>   
+            </ul>
+        </div>
+<?php
+    }
+        elseif (isset ($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==0){
+?>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
@@ -60,17 +89,42 @@
                         <a href="#contact">Contact</a>
                     </li>
                     <li class="page-scroll">
-                        <ul class="sous">
-                            <li><a href="index.php?action=subscribe">je m'inscrit</a></li>
-                            <li><a href="index.php?action=connect">j'ai un compte</a></li>
-                            <li><?php if(isset($_SESSION['pseudo'])){echo('bonjour ' . $_SESSION['pseudo']);}?></li>
-                        </ul>
-                    </li>
-                    <li class="page-scroll">
                         <a href="index.php?action=disconnect">Deconnexion</a>
-                    </li>
+                    </li>   
                 </ul>
             </div>
+<?php
+}
+    else{
+?>
+
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#portfolio">Les articles</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#about">About</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#contact">Contact</a>
+                </li>
+                <li>
+                    <ul class="sous">
+                        <li><a href="index.php?action=subscribe">je m'inscrit</a></li>
+                        <li><a href="index.php?action=connect">j'ai un compte</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+<?php
+}
+?>
+            
         </div>
     </nav>
 

@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 <section>
 <h1><?php echo($post['title']) ?></h1>
-<p><a href="index.php">Retour à la liste des billets</a></p>
+<p><a href="index.php?action=postList">Retour à la liste des billets</a></p>
 
 <div class="news">
     <h3>
