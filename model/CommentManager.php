@@ -27,4 +27,12 @@ class CommentManager extends Manager
         return $affectedLines;
     }
 
+    public function deleteAllComments($post_id)
+    {
+        $db = $this->dbConnect();
+        $del = $db->prepare('DELETE FROM comment WHERE post_id = :id');
+        $del->execute(['id'=>$post_id]);
+
+    }
+
 }

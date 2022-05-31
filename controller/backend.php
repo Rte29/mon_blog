@@ -53,15 +53,32 @@ function setPost()
     }
 }
 
-function cancelPost()
-{
-    
-    require('public/view/frontend/postList.php');
-}
-
 function cancel()
 {
-    echo('cancel');
+    $post_id = $_GET['id'];
+
+    $postManager = new \Blog\Model\PostManager();
+    $commentManager = new \Blog\Model\CommentManager();
+
+    $comments = $commentManager->getComments($post_id);
+
+    while ($data = $comments->fetch())
+{
+    echo($data['comment_id']);
     die;
+}   
+    if(empty($data))
+    {
+        $delComments = $commentManager ->deleteAllComments($post_id);
+        header('Location: index.php?action=postPost');
+ 
+    }
+    else
+    {
+        echo('il y a des commentaires');
+        header('Location: index.php?action=postPost');
+    }
+
+    
 }
 

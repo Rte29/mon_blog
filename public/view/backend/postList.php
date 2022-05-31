@@ -37,7 +37,7 @@ include('./public/view/frontend/navigation.php');
         <p>
             <?= nl2br(htmlspecialchars($data['post_content'])) ?>
             <br />
-            <em><a href="index.php?action=cancel&amp;id=<?php echo $data['post_id'] ?>" onclick="return confirm('Erwan?')">Supprimer</a></em>
+            <em><a href="index.php?action=cancel&amp;id=<?php echo $data['post_id'] ?>" onclick="return confirm('Confirmez-vous la suppression ?')">Supprimer</a></em>
             
 
         </p>
