@@ -55,30 +55,60 @@ function setPost()
 
 function cancel()
 {
-    $post_id = $_GET['id'];
+    $postId = $_GET['id'];
 
     $postManager = new \Blog\Model\PostManager();
     $commentManager = new \Blog\Model\CommentManager();
 
-    $comments = $commentManager->getComments($post_id);
+    $comments = $commentManager->getAllComments($postId);
+    $comment = $comments->fetch();
 
-    while ($data = $comments->fetch())
-{
-    echo($data['comment_id']);
-    die;
-}   
-    if(empty($data))
-    {
-        $delComments = $commentManager ->deleteAllComments($post_id);
-        header('Location: index.php?action=postPost');
- 
-    }
-    else
-    {
-        echo('il y a des commentaires');
-        header('Location: index.php?action=postPost');
-    }
 
-    
+    if(empty($comment['comment_id']))
+    {
+        $delete = $postManager->deletePost($postId);
+        header('Location: index.php?action=postList');
+    }
+    else{
+
+        $deleteComments = $commentManager->deleteAllComments($postId);
+        $delete = $postManager->deletePost($postId);
+        header('Location: index.php?action=postList');
+    }
 }
 
+function uptPt()
+{
+    $post = new \Blog\Model\PostManager();
+    $posts = $post->getAllPosts();
+
+    require('public/view/backend/postListForUpdate.php');
+}
+
+function uptPtView()
+{
+    $postId = $_GET['id'];
+
+    $postManager = new \Blog\Model\PostManager();
+    $post = $postManager->getPost($postId);
+
+    require('public/view/backend/uptPostView.php');
+
+}
+
+
+function uptPosts()
+{
+    $postTitle = $_POST['title'];
+    $postContent = $_POST['text']; 
+    $postId = $_POST['id'];
+
+    echo($postTitle);
+    echo($postContent);
+    echo ($postId);
+
+    $postManager = new \Blog\Model\PostManager();
+    $updatePost = $postManager->updatePost($postTitle, $postContent, $postId);
+    
+    header('Location: index.php?action=uptPost');
+}

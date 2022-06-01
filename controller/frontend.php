@@ -47,7 +47,7 @@ function addComment($postId, $comment)
 {
     $commentManager = new \Blog\Model\CommentManager();
 
-    $affectedLines = $commentManager->postComment($postId, $comment);
+    $affectedLines = $commentManager->setComment($postId, $comment);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
@@ -154,5 +154,5 @@ function checkLogin()
 function disconnect()
 {
     session_destroy();
-    listPosts();
+    header('Location: index.php?action=listPosts');
 }

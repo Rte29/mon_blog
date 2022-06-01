@@ -5,8 +5,8 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Adresse</h3>
-                        <p>29 rte de Kerambellec
-                            <br>29840 Lanildut</p>
+                        <p>29 rte de Lambelkerec
+                            <br>28940 Talludin</p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Around the Web</h3>
@@ -24,7 +24,7 @@
                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-workplace"></i></a>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-github-square"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -45,3 +45,22 @@
             </div>
         </div>
     </footer>
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/freelancer.min.js"></script>
+
+</body>
+
+</html>

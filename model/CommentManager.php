@@ -17,7 +17,17 @@ class CommentManager extends Manager
 
     }
 
-    public function postComment($postId, $comment)
+    public function getAllComments($postId)
+    {
+        $db = $this->dbConnect();
+        $comments = $db->prepare('SELECT comment_id FROM comment WHERE post_id = ? ');
+        $comments->execute(array($postId));
+
+        return $comments;
+
+    }
+
+    public function setComment($postId, $comment)
     {
 
         $db = $this->dbConnect();
@@ -26,12 +36,14 @@ class CommentManager extends Manager
 
         return $affectedLines;
     }
-
-    public function deleteAllComments($post_id)
+  
+    public function deleteAllComments($postId)
     {
         $db = $this->dbConnect();
         $del = $db->prepare('DELETE FROM comment WHERE post_id = :id');
-        $del->execute(['id'=>$post_id]);
+        $del->execute(['id'=>$postId]);
+
+        return $del;
 
     }
 

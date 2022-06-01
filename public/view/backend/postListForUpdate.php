@@ -2,20 +2,10 @@
 include('./public/view/frontend/navigation.php');
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+ob_start(); 
+?>
 
-<head>
-
-    <meta charset="utf-8">
-    <meta charset="utf-8">
-<title>Open Bootstrap Modal on Page Load</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/jquery-3.5.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-</head>
-<?php ob_start(); ?>
 <section>
 <h1>Les billets !</h1>
 
@@ -32,8 +22,7 @@ include('./public/view/frontend/navigation.php');
         <p>
             <?= nl2br(htmlspecialchars($data['post_content'])) ?>
             <br />
-            <em><a href="index.php?action=cancel&amp;id=<?php echo $data['post_id'] ?>" 
-            onclick="return confirm('Vous êtes sur le point de supprimer un article ainsi que tous les commentaires y référent. Cette action sera définitive. Confirmez votre choix')">Supprimer</a></em>
+            <em><a href="index.php?action=uptPostView&amp;id=<?php echo $data['post_id'] ?>">Modifier</a></em>
             
 
         </p>
@@ -46,8 +35,6 @@ require('./public/view/frontend/template.php'); ?>
 
 </section>
 <?php include('./public/view/frontend/footer.php'); ?>
-
-
 <!-- jQuery -->
 <script src="vendor/jquery/jquery.min.js"></script>
 

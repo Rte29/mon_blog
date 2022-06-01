@@ -9,8 +9,8 @@ if (isset($_SESSION['PSEUDO']))
 ?>
 <div class="alert alert-success" role="alert">
 <h3>Bonjour <?php echo $_SESSION['PSEUDO']; ?></h3> 
-</div>"
-<?php ;
+</div>
+<?php 
 }
 ?>
 

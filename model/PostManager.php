@@ -49,11 +49,21 @@ class PostManager extends Manager
         return $affectedLines;
     }
 
-    public function deletePost($post_id)
+    public function deletePost($postId)
     {
         $db = $this->dbConnect();
         $del = $db->prepare('DELETE FROM post WHERE post_id = :id');
-        $del->execute(['id'=>$post_id]);
+        $del->execute(['id'=>$postId]);
 
+    }
+
+    public function updatePost($postTitle, $postContent, $postId)
+    {
+        $db = $this->dbConnect();
+        $update = $db->prepare('UPDATE post SET title = :title, post_update_date=now(), post_content = :content WHERE post_id = :id');
+        $update->execute([
+            'title'=>$postTitle, 
+            'content'=>$postContent,
+            'id'=>$postId, ]);
     }
 }

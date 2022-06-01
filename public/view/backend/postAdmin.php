@@ -23,7 +23,7 @@ include('./public/view/frontend/navigation.php');
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
-                <a href="index.php?action=updatePost" class="portfolio-link">
+                <a href="index.php?action=uptPost" class="portfolio-link">
                     <div class="caption">
                         <div class="caption-content">
                             <i class="fa fa-search-plus fa-3x"></i>

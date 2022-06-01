@@ -67,6 +67,15 @@ try {
          elseif ($_GET['action'] == 'cancel') {
             cancel();
          } 
+         elseif ($_GET['action'] == 'uptPost') {
+            uptPt();
+         } 
+         elseif ($_GET['action'] == 'uptPosts') {
+            uptPosts();
+         } 
+         elseif ($_GET['action'] == 'uptPostView') {
+            uptPtView();
+         } 
          
         }       
     
