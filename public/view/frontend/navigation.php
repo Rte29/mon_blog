@@ -67,7 +67,10 @@
                 </li>
                 <li class="page-scroll">
                     <a href="index.php?action=disconnect">Deconnexion</a>
-                </li>   
+                </li>
+                <li class="page-scroll">
+                    <a href="#"><?php echo$_SESSION['PSEUDO'] ?></a>
+                </li>
             </ul>
         </div>
 <?php
@@ -90,7 +93,10 @@
                     </li>
                     <li class="page-scroll">
                         <a href="index.php?action=disconnect">Deconnexion</a>
-                    </li>   
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.php?action=disconnect"><?php echo$_SESSION['PSEUDO'] ?></a>
+                    </li>    
                 </ul>
             </div>
 <?php

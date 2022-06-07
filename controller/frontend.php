@@ -39,7 +39,17 @@ function post()
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
 
-    
+    require('public/view/frontend/postView.php');
+}
+
+function readallComment()
+{
+    $postManager = new \Blog\Model\PostManager();
+    $commentManager = new \Blog\Model\CommentManager();
+
+    $post = $postManager->getPost($_GET['id']);
+    $comments = $commentManager->readAllComment($_GET['id']);
+        
     require('public/view/frontend/postView.php');
 }
 
@@ -138,6 +148,7 @@ function checkLogin()
             $_SESSION['AUTHOR'] = $log['id'];
             $_SESSION['ADMIN'] = $log['admin_role'];
             $_SESSION['PSEUDO'] = $log['username'];
+            $_SESSION['EMAIL'] = $log['email'];
             listPosts();
             
         }

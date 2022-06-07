@@ -75,8 +75,22 @@ try {
          } 
          elseif ($_GET['action'] == 'uptPostView') {
             uptPtView();
+         }
+         elseif ($_GET['action'] == 'commentAdmin') {
+            commentAdmin();
+         }
+         elseif ($_GET['action'] == 'readAllComment') {
+            readAllComment();
          } 
-         
+         elseif ($_GET['action'] == 'commentValidation') {
+            commentValidation();
+         } 
+         elseif ($_GET['action'] == 'validateComment') {
+           validateComments();
+         }
+         elseif ($_GET['action'] == 'cancelComment') {
+            cancelComments();
+          }
         }       
     
     else {

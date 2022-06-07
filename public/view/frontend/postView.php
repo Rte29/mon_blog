@@ -24,11 +24,10 @@
 <?php if (isset($_SESSION['PSEUDO'])) :?>
             <form action="index.php?action=addComment&amp;id=<?= $post['post_id'] ?>" method="post">
                 <div>
-                    <label for="author">Auteur</label><br />
-                    <input type="text" id="author" name="author" value="<?php echo($_SESSION['PSEUDO']) ?>"><br />
+                    <input type="hidden" id="author" name="author" value="<?php echo($_SESSION['PSEUDO']) ?>"><br />
                 </div>
                 <div>
-                    <label for="comment">Commentaire</label><br />
+                    <label for="comment">Ajoutez un commentaire</label><br />
                     <textarea id="comment" name="comment"></textarea>
                 </div>
                 <div>
@@ -46,23 +45,29 @@
     </div>  
 </div>
 <?php
-
 while ($comment = $comments->fetch())
 {
 ?>
 <div class="container">
     <div class="row">
         <div class="col-lg-10 text-center">
-            <p>le <?= $comment['comment_creation_date_fr'] ?></p>
+            <p>le <?= $comment['comment_creation_date_fr'] ?> par <em><?php echo $comment['username'] ?></em></p>
             <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
         </div>
     </div>  
 </div>
-<?php
+<?php 
 }
 ?>
-</section>
-<?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php $content = ob_get_clean();
+require('template.php'); ?>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 text-center">
+            <p><a href="index.php?action=readAllComment&id=<?php echo($_GET['id']) ?>">lire tous les commentaires</a></p>
+        </div>
+    </div>  
+</div>
 <?php include('footer.php'); ?>

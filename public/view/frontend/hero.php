@@ -5,19 +5,6 @@
     
         <header>
             <div class="container">
-            <div class="row">
-                    <div class="col-lg-12">
-            <?php
-                if (isset($_SESSION['PSEUDO']))
-                    {
-            ?>
-                    <div class="alert alert-dark" role="alert">
-                        <h3>Bonjour <?php echo $_SESSION['PSEUDO']; ?></h3> 
-                    </div>
-            <?php 
-                    }
-            ?>
-                    </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <img class="img-responsive" src="./public/img/portrait-mini.jpg" alt="">

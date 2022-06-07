@@ -3,7 +3,7 @@
 
 function admin()
 {
-    require('public/view/frontend/admin.php');
+    require('public/view/backend/admin.php');
 }
 
 function postList()
@@ -111,4 +111,35 @@ function uptPosts()
     $updatePost = $postManager->updatePost($postTitle, $postContent, $postId);
     
     header('Location: index.php?action=uptPost');
+}
+
+function commentAdmin()
+{
+    require('public/view/backend/commentAdmin.php');
+}
+
+function commentValidation()
+{
+    $postManager = new \Blog\Model\PostManager();
+    $commentManager = new \Blog\Model\CommentManager();
+
+    $posts = $postManager->getAllPosts();
+       
+    require('public/view/backend/commentValidation.php');
+}
+
+function validateComments()
+{
+    $commentManager = new \Blog\Model\CommentManager();
+    $val = $commentManager->validateComment($_GET['id']);
+
+    header('Location: index.php?action=commentValidation');
+}
+
+function cancelComments()
+{
+    $commentManager = new \Blog\Model\CommentManager();
+    $cnl = $commentManager->cancelComment($_GET['id']);
+
+    header('Location: index.php?action=commentValidation');
 }
