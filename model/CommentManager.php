@@ -49,6 +49,16 @@ class CommentManager extends Manager
 
     }
 
+    public function getAllUserComments($userId)
+    {
+        $db = $this->dbConnect();
+        $comments = $db->prepare('SELECT comment_id FROM comment WHERE id = ? ');
+        $comments->execute(array($userId));
+
+        return $comments;
+
+    }
+
     public function setComment($postId, $comment)
     {
 
@@ -64,6 +74,16 @@ class CommentManager extends Manager
         $db = $this->dbConnect();
         $del = $db->prepare('DELETE FROM comment WHERE post_id = :id');
         $del->execute(['id'=>$postId]);
+
+        return $del;
+
+    }
+
+    public function deleteAllUserComments($userId)
+    {
+        $db = $this->dbConnect();
+        $del = $db->prepare('DELETE FROM comment WHERE post_id = :id');
+        $del->execute(['id'=>$userId]);
 
         return $del;
 

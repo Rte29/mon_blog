@@ -3,13 +3,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>About</h2>
+                    <h2>A PROPOS DE</h2>
                     <hr class="star-light">
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-5 col-lg-offset-1">
-                    <h4>Qu'est ce qu'un site internet ?<h4> 
+                    <h4>Qu'est ce qu'un site internet ?</h4> 
                     <p>Un site internet est une plateforme en ligne qui est réservé à une ou plusieurs activités pour une marque ou une personne. 
                         Il s'agit d'un groupe de pages accessibles depuis un navigateur internet, par exemple Google, qui sont organisées pour présenter un sujet. 
                         La plupart des marques ont un site internet et pour cause, à l'ère du numérique ces derniers sont indispensables pour communiquer et vendre. 
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="#" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Download Theme
+                        <i class="fa fa-download"></i> Téléchargez mon CV
                     </a>
                 </div>
             </div>

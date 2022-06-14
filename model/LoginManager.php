@@ -16,4 +16,15 @@ class LoginManager extends Manager
         
         return $tab;
     }
+
+    public function readAccountToValidate()
+    {
+        $db = $this->dbConnect();
+        $comments = $db->prepare('SELECT comment_id, comment, DATE_FORMAT(comment_creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_creation_date_fr, username
+        FROM comment LEFT JOIN user ON comment.id = user.id WHERE post_id = ? AND comment_status IS NULL ORDER BY comment_creation_date DESC');
+        $comments->execute(array($postId));
+
+        return $comments;
+
+    }    
 }

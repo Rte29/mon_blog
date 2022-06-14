@@ -60,37 +60,58 @@ try {
         } 
         elseif ($_GET['action'] == 'setPost') {
             setPost();
-         } 
+        } 
         elseif ($_GET['action'] == 'cancelPost') {
-            readAll();
-         } 
-         elseif ($_GET['action'] == 'cancel') {
-            cancel();
-         } 
-         elseif ($_GET['action'] == 'uptPost') {
-            uptPt();
-         } 
-         elseif ($_GET['action'] == 'uptPosts') {
-            uptPosts();
-         } 
-         elseif ($_GET['action'] == 'uptPostView') {
-            uptPtView();
-         }
-         elseif ($_GET['action'] == 'commentAdmin') {
-            commentAdmin();
-         }
-         elseif ($_GET['action'] == 'readAllComment') {
-            readAllComment();
-         } 
-         elseif ($_GET['action'] == 'commentValidation') {
-            commentValidation();
-         } 
-         elseif ($_GET['action'] == 'validateComment') {
-           validateComments();
-         }
-         elseif ($_GET['action'] == 'cancelComment') {
-            cancelComments();
-          }
+        readAll();
+        } 
+        elseif ($_GET['action'] == 'cancel') {
+        cancel();
+        } 
+        elseif ($_GET['action'] == 'uptPost') {
+        uptPt();
+        } 
+        elseif ($_GET['action'] == 'uptPosts') {
+        uptPosts();
+        } 
+        elseif ($_GET['action'] == 'uptPostView') {
+        uptPtView();
+        }
+        elseif ($_GET['action'] == 'commentAdmin') {
+        commentAdmin();
+        }
+        elseif ($_GET['action'] == 'readAllComment') {
+        readAllComment();
+        } 
+        elseif ($_GET['action'] == 'commentValidation') {
+        commentValidation();
+        } 
+        elseif ($_GET['action'] == 'validateComment') {
+        validateComments();
+        }
+        elseif ($_GET['action'] == 'cancelComment') {
+        cancelComments();
+        }
+        elseif ($_GET['action'] == 'cancelComment2') {
+        cancelComments2();
+            }
+        elseif ($_GET['action'] == 'comments') {
+        comments();
+        }
+        elseif ($_GET['action'] == 'accountAdmin') {
+            accountAdmin();
+        }
+        elseif ($_GET['action'] == 'lastAccount') {
+            lastAccount();
+        }
+        elseif ($_GET['action'] == 'searchAccount') {
+            searchAccount();
+        }
+        elseif ($_GET['action'] == 'editUser') {
+            editUser();
+        }
+        elseif ($_GET['action'] == 'deleteUser') {
+            deleteUser();
+        }
         }       
     
     else {

@@ -1,0 +1,47 @@
+<?php 
+include('./public/view/frontend/navigation.php');
+?>
+
+<body>
+
+    <section id="accountFilter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h4>Affichage des nouveaux comptes</br> Quelle période souhaitez-vous visualiser ?</h4>
+                    <hr class="star-primary">
+                </div>
+                <p><a href="index.php?action=accountAdmin">Retour ...</a></p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <form name="subscribe" id="searchAccount" action="index.php?action=searchAccount" method="post" >
+                        <div class="row control-group">
+                            <div class="form-group"> 
+                                <div class="col-md-4 floating-label-form-group controls">
+                                    <label for="start">Date de début</label>
+                                    <input type="date" class="form-control" placeholder="date de début" name="start" id="start" required>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-md-4 floating-label-form-group controls">
+                                </div>
+                                <div class="col-md-4 floating-label-form-group controls">
+                                    <label for="stop" >Date de fin</label>
+                                    <input type="date" class="form-control" placeholder="date de fin" name="end" id="end" required>
+                                <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg" name="Chercher">Chercher</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    </body>

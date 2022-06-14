@@ -31,14 +31,14 @@ if (isset($newUser))
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="pseudo">pseudo</label>
-                                <input type="text" class="form-control" placeholder="Pseudo" name="pseudo" id="pseudo" required data-validation-required-message="Merci d'entrer votre pseudo.">
+                                <input type="text" class="form-control"  name="pseudo" id="pseudo" required data-validation-required-message="Merci d'entrer votre pseudo.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="pwd">mot de passe</label>
-                                <input type="password" class="form-control" placeholder="mot de passe" name="pwd" id="pwd" required data-validation-required-message="Merci d'entrer votre mot de passe.">
+                                <input type="password" class="form-control" name="pwd" id="pwd" required data-validation-required-message="Merci d'entrer votre mot de passe.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>

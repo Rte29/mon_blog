@@ -66,4 +66,5 @@ class PostManager extends Manager
             'content'=>$postContent,
             'id'=>$postId, ]);
     }
+    
 }

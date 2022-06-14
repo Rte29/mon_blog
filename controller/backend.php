@@ -1,5 +1,10 @@
 <?php
-//session_start();
+
+// Chargement des classes
+require_once('model/PostManager.php');
+require_once('model/CommentManager.php');
+require_once('model/UserManager.php');
+require_once('model/LoginManager.php');
 
 function admin()
 {
@@ -141,5 +146,84 @@ function cancelComments()
     $commentManager = new \Blog\Model\CommentManager();
     $cnl = $commentManager->cancelComment($_GET['id']);
 
+
+
     header('Location: index.php?action=commentValidation');
+}
+
+function cancelComments2()
+{
+    $commentManager = new \Blog\Model\CommentManager();
+    $cnl = $commentManager->cancelComment($_GET['id']);
+
+    
+
+    header('Location: index.php?action=comments');
+}
+
+function comments()
+{
+    $postManager = new \Blog\Model\PostManager();
+    $commentManager = new \Blog\Model\CommentManager();
+
+    $posts = $postManager->getAllPosts();
+       
+    require('public/view/backend/comments.php');
+}
+
+function accountAdmin()
+{
+    require('public/view/backend/accountAdmin.php');
+}
+
+function lastAccount()
+{
+    require('public/view/backend/lastAccount.php');
+}
+
+function searchAccount()
+{
+    $start = htmlspecialchars($_POST['start']);
+    $end = htmlspecialchars($_POST['end']);
+
+    $user = new \Blog\Model\Subscribe();
+        
+    $accounts = $user->getUsers($start, $end);
+
+    require('public/view/backend/account.php');
+
+}
+
+function editUser()
+{
+$userId = $_GET['id'];
+
+$user = new \Blog\Model\Subscribe();
+$editUser = $user->getUser($userId);
+
+require('public/view/backend/editAccount.php');
+}
+
+function deleteUser()
+{
+    $userId = $_GET['id'];
+
+    $userManager = new \Blog\Model\Subscribe();
+    $commentManager = new \Blog\Model\CommentManager();
+
+    $comments = $commentManager->getAllUserComments($userId);
+    $comment = $comments->fetch();
+
+
+    if(empty($comment['comment_id']))
+    {
+        $delete = $userManager->deleteUser($userId);
+        header('Location: index.php?action=lastAccount');
+    }
+    else{
+
+        $deleteComments = $commentManager->deleteAllUserComments($userId);
+        $delete = $userManager->deleteUser($userId);
+        header('Location: index.php?action=lastAccount');
+    }
 }

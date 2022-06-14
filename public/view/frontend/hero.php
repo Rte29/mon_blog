@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <img class="img-responsive" src="./public/img/portrait-mini.jpg" alt="">
+                        <img class="img-responsive" src="./public/img/portrait-mini2.jpg" alt="">
                         
                         <div class="intro-text">
                             <span class="name">Erwan GOUEZ</span>
