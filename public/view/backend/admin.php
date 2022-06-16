@@ -1,7 +1,7 @@
 <?php 
+if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
 
 include('./public/view/frontend/navigation.php');
-
 ?>
 
 <section id="portfolio">
@@ -53,5 +53,8 @@ include('./public/view/frontend/navigation.php');
 <?php 
 
 include('./public/view/frontend/footer.php');
-
+}
+else{
+    header('Location: index.php?action=listPosts');
+}
 ?>

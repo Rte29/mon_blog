@@ -29,16 +29,16 @@ if (isset($newUser))
                 <div class="col-lg-8 col-lg-offset-2">
                     <form action="index.php?action=checkLogin" method="post">
                         <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <div class="form-group col-xs-12 controls">
                                 <label for="pseudo">pseudo</label>
-                                <input type="text" class="form-control"  name="pseudo" id="pseudo" required data-validation-required-message="Merci d'entrer votre pseudo.">
+                                <input type="text" class="form-control"  name="pseudo" placeholder="toto95" id="pseudo" required data-validation-required-message="Merci d'entrer votre pseudo.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <div class="form-group col-xs-12 controls">
                                 <label for="pwd">mot de passe</label>
-                                <input type="password" class="form-control" name="pwd" id="pwd" required data-validation-required-message="Merci d'entrer votre mot de passe.">
+                                <input type="password" class="form-control" name="pwd" placeholder="********" id="pwd" required data-validation-required-message="Merci d'entrer votre mot de passe.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>

@@ -1,6 +1,11 @@
-<?php include('./public/view/frontend/navigation.php'); ?>
+<?php 
+if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
+    
+include('./public/view/frontend/navigation.php'); 
+?>
 <div class="container">
     <section>
+    <p><a href="index.php?action=lastAccount">Retour ...</a></p><br/>
         <div class="rows">
             <div class="col-lg-8 col-lg-offset-2">
 
@@ -30,14 +35,15 @@
                     <em><a href="index.php?action=deleteUser" class="btn btn-success" 
                     onclick="return confirm('Vous êtes sur le point de supprimer un compte ainsi que tous les commentaires déposés par l\'utilisateur. Cette action sera définitive. Confirmez votre choix')">
                     Supprimer</a></em>
-                    <div class="rows">
-                        <div class="col-lg-4 col-lg-offset-2">
-                            <p><a href="index.php?action=lastAccount">Retour ...</a></p>
-                        </div>
-                    </div>
             </div>
         </div>
 </div>
 
     </section>
-<?php include('./public/view/frontend/footer.php'); ?>
+<?php 
+include('./public/view/frontend/footer.php'); 
+}
+else{
+    header('Location: index.php?action=listPosts');
+}
+?>

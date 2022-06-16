@@ -1,4 +1,6 @@
 <?php 
+if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
+
 include('./public/view/frontend/navigation.php');
 ?>
 <body>
@@ -10,21 +12,22 @@ include('./public/view/frontend/navigation.php');
                     <hr class="star-primary">
                 </div>
             </div>
+            <p><a href="index.php?action=postAdmin">Retour ...</a></p><br/>
              <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     
                     <form name="addPost" id="addPost" action="index.php?action=setPost" method="post">
                         <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <div class="form-group col-xs-12 controls">
                                 <label for="title">Titre</label>
-                                <input type="text" class="form-control" placeholder="Titre" name="title" id="title" required data-validation-required-message="Please enter title.">
+                                <input type="text" class="form-control" name="title" id="title" required data-validation-required-message="Please enter title.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <div class="form-group col-xs-12 controls">
                                 <label for="text">Texte</label>
-                                <textarea id="text" name="text" rows="5" cols="100"placeholder="Entrer votre texte"></textarea>
+                                <textarea id="text" name="text" rows="5" cols="100"></textarea>
                                 
                             </div>
                         </div>
@@ -67,4 +70,8 @@ include('./public/view/frontend/navigation.php');
 
 <?php
 include('./public/view/frontend/footer.php');
+}
+else{
+    header('Location: index.php?action=listPosts');
+}
 ?>

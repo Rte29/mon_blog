@@ -1,6 +1,9 @@
-<?php include('navigation.php'); ?>
+<?php 
+if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
+     
+include('navigation.php'); 
 
-<?php ob_start(); ?>
+ob_start(); ?>
 <section>
 <h1><?php echo($post['title']) ?></h1>
 <p><a href="index.php?action=postList">Retour à la liste des billets</a></p>
@@ -65,4 +68,9 @@ while ($comment = $comments->fetch())
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
-<?php include('footer.php'); ?>
+<?php include('footer.php'); 
+}
+else{
+    header('Location: index.php?action=listPosts');
+}
+?>

@@ -1,9 +1,10 @@
-<?php 
+<?php
+if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
+     
 include('./public/view/frontend/navigation.php');
 ?>
 <body>
 <section id="contact">
-<p><a href="index.php?action=uptPost">Retour à la liste des billets</a></p>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -11,6 +12,7 @@ include('./public/view/frontend/navigation.php');
                     <hr class="star-primary">
                 </div>
             </div>
+            <p><a href="index.php?action=uptPost">Retour ...</a></p><br/>
              <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     
@@ -52,4 +54,8 @@ include('./public/view/frontend/navigation.php');
 
 <?php
 include('./public/view/frontend/footer.php');
+}
+else{
+    header('Location: index.php?action=listPosts');
+}
 ?>

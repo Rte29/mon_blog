@@ -1,4 +1,6 @@
 <?php 
+if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
+    
 include('./public/view/frontend/navigation.php');
 ?>
 
@@ -16,22 +18,20 @@ include('./public/view/frontend/navigation.php');
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <form name="subscribe" id="searchAccount" action="index.php?action=searchAccount" method="post" >
-                        <div class="row control-group">
-                            <div class="form-group"> 
-                                <div class="col-md-4 floating-label-form-group controls">
+                        <div class="form-group"> 
+                                <div class="col-md-4">
                                     <label for="start">Date de début</label>
                                     <input type="date" class="form-control" placeholder="date de début" name="start" id="start" required>
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="col-md-4 floating-label-form-group controls">
-                                </div>
-                                <div class="col-md-4 floating-label-form-group controls">
+                               
+                                <div class="col-md-4">
                                     <label for="stop" >Date de fin</label>
                                     <input type="date" class="form-control" placeholder="date de fin" name="end" id="end" required>
                                 <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                        </div>
+                       
                         <hr>
                         <div class="row">
                             <div class="form-group col-xs-12">
@@ -45,3 +45,11 @@ include('./public/view/frontend/navigation.php');
         </div>
     </section>
     </body>
+    <?php 
+
+include('./public/view/frontend/footer.php');
+}
+else{
+    header('Location: index.php?action=listPosts');
+}
+?>

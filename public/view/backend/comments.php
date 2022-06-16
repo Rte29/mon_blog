@@ -1,9 +1,12 @@
 <?php 
+if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
+    
 include('./public/view/frontend/navigation.php');
 ?>
     <?php ob_start(); ?>
         <section>
             <h1>Tous les commentaires</h1>
+            <p><a href="index.php?action=commentAdmin">Retour ...</a></p><br/>
     <?php
         while ($data = $posts->fetch())
         {
@@ -35,4 +38,9 @@ include('./public/view/frontend/navigation.php');
     ?>
 
         </section>
-<?php include('./public/view/frontend/footer.php'); ?>
+<?php include('./public/view/frontend/footer.php'); 
+}
+else{
+    header('Location: index.php?action=listPosts');
+}
+?>
