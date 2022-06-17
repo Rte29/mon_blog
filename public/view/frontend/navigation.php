@@ -57,10 +57,10 @@
                             <a href="index.php?action=postList">Les articles</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="#about">About</a>
+                            <a href="index.php?action=listPosts#about">About</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="#contact">Contact</a>
+                            <a href="index.php?action=listPosts#contact">Contact</a>
                         </li>
                         <li class="page-scroll">
                             <a href="index.php?action=admin">gestion admin</a>

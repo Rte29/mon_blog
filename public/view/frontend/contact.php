@@ -1,5 +1,3 @@
-<body>
-
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -11,34 +9,33 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    
+                    <form name="contactForm" id="contactForm" action="index.php?action=mailContact" method="post">
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Nom</label>
-                                <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                                <input type="text" class="form-control" name="name" id="name" required data-validation-required-message="Entrez votre nom.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Prénom</label>
-                                <input type="text" class="form-control" id="firstName" required data-validation-required-message="Please enter your name.">
+                                <input type="text" class="form-control" name="firstName" id="firstName" required data-validation-required-message="Entrez votre prénom.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>adresse mail</label>
-                                <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                                <input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Entrez votre addresse mail.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Message</label>
-                                <textarea rows="5" class="form-control" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                <textarea rows="5" class="form-control" name="message" id="message" required data-validation-required-message="Entrez un message."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -46,7 +43,7 @@
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Send</button>
+                                <button type="submit" class="btn btn-success btn-lg">Envoyer</button>
                             </div>
                         </div>
                     </form>
@@ -54,5 +51,4 @@
             </div>
         </div>
     </section>
-    </body>
   

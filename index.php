@@ -112,6 +112,9 @@ try {
         elseif ($_GET['action'] == 'deleteUser') {
             deleteUser();
         }
+        elseif ($_GET['action'] == 'mailContact') {
+            mailContact();
+        }
         }       
     
     else {

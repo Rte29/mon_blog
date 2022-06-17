@@ -167,3 +167,31 @@ function disconnect()
     session_destroy();
     header('Location: index.php?action=listPosts');
 }
+
+function mailContact()
+{
+$to = "er.gouez@gmail.com";
+$subject = "Message d'un utilisateur de Mon blog";
+$nom = htmlspecialchars($_POST['name']);
+$prenom = htmlspecialchars($_POST['firstName']);
+$msg = htmlspecialchars($_POST['message']);
+$from = htmlspecialchars($_POST['email']);
+
+$message = 'Nom : ' . $nom . "\r\n" . 'Prénom : ' . $prenom . "\r\n" . 'email : ' . $from . "\r\n" . 'Message :  ' . "\r\n" . $msg ;
+
+$headers = "Content-Type: text/plain; charset=utf-8\r\n";
+$headers .="From: " . $from . "<br>";
+
+
+if (mail($to, $subject, $message, $headers))
+    {
+    ?><div class="alert alert-success" role="alert">
+    <h3>Bravo votre message a bien été envoyé. Je vous remercie.</h3><?php
+    header('Location: index.php?action=listPosts');}
+    else
+    {
+    echo 'erreur envoi';
+    die;
+    }
+
+}

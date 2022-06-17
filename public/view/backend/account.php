@@ -1,8 +1,9 @@
-<?php 
+<?php
+setcookie('start', $_POST['start']);
+setcookie('end', $_POST['end']); 
 if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
     
 include('./public/view/frontend/navigation.php');
-
 
 ?>
 
@@ -42,6 +43,8 @@ include('./public/view/frontend/navigation.php');
 
 <?php 
 include('./public/view/frontend/footer.php');
+
+var_dump($_COOKIE);
 }
 else{
     header('Location: index.php?action=listPosts');

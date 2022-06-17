@@ -23,7 +23,7 @@ include('./public/view/frontend/navigation.php');
                         <div class="col-lg-12 text-center">
                             <p>le <?= $comment['comment_creation_date_fr'] ?> par <em><?php echo $comment['username'] ?></em></p>
                             <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-                            <em><a href="index.php?action=cancelComment&amp;id=<?= $comment['comment_id'] ?>">Supprimer</a></em>
+                            <em><a href="index.php?action=cancelComment&amp;id=<?= $comment['comment_id'] ?>" onclick="return confirm('Vous êtes sur le point de supprimer un commentaire déposés par un utilisateur. Cette action sera définitive. Confirmez votre choix')">Supprimer</a></em>
                             <em><a href="index.php?action=validateComment&amp;id=<?= $comment['comment_id'] ?>">Valider</a></em>
                         </div>  
                     </div>
