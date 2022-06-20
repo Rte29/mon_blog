@@ -57,7 +57,7 @@ include('./public/view/frontend/navigation.php');
                             <br />
                                 <div class="row">
                                     <div class="form-group col-xs-12">
-                                        <button type="submit" class="btn btn-success btn-lg">Send</button>
+                                        <button type="submit" class="btn btn-success btn-lg">Envoyer</button>
                                     </div>
                                 </div>
                         

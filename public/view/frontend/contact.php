@@ -27,7 +27,7 @@
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>adresse mail</label>
+                                <label>Adresse mail</label>
                                 <input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Entrez votre addresse mail.">
                                 <p class="help-block text-danger"></p>
                             </div>

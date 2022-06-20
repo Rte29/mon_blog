@@ -28,7 +28,7 @@
                 </div>
                 <div>
                     <label for="comment">Ajoutez un commentaire</label><br />
-                    <textarea id="comment" name="comment"></textarea>
+                    <textarea id="comment" name="comment" required></textarea>
                 </div>
                 <div>
                     <br/>

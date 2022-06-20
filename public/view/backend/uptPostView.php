@@ -8,7 +8,7 @@ include('./public/view/frontend/navigation.php');
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Ajouter un post</h2>
+                    <h2>Modifier un post</h2>
                     <hr class="star-primary">
                 </div>
             </div>

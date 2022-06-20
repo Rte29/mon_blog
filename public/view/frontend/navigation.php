@@ -57,7 +57,7 @@
                             <a href="index.php?action=postList">Les articles</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="index.php?action=listPosts#about">About</a>
+                            <a href="index.php?action=listPosts#about">A propos de</a>
                         </li>
                         <li class="page-scroll">
                             <a href="index.php?action=listPosts#contact">Contact</a>
