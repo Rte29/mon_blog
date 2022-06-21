@@ -11,7 +11,6 @@ function listPosts()
 {
     $postManager = new \Blog\Model\PostManager();
     $posts = $postManager->getPosts();
-
     
     require('public/view/frontend/listPostView.php');
 }
@@ -36,8 +35,8 @@ function post()
     $postManager = new \Blog\Model\PostManager();
     $commentManager = new \Blog\Model\CommentManager();
 
-    $post = $postManager->getPost($_GET['id']);
-    $comments = $commentManager->getComments($_GET['id']);
+    $post = $postManager->getPost(htmlspecialchars($_GET['id']));
+    $comments = $commentManager->getComments(htmlspecialchars($_GET['id']));
 
     require('public/view/frontend/postView.php');
 }
@@ -47,8 +46,8 @@ function readallComment()
     $postManager = new \Blog\Model\PostManager();
     $commentManager = new \Blog\Model\CommentManager();
 
-    $post = $postManager->getPost($_GET['id']);
-    $comments = $commentManager->readAllComment($_GET['id']);
+    $post = $postManager->getPost(htmlspecialchars($_GET['id']));
+    $comments = $commentManager->readAllComment(htmlspecialchars($_GET['id']));
         
     require('public/view/frontend/postView.php');
 }
@@ -79,8 +78,8 @@ function connect()
 
 function addUser()
 {
-$name =htmlspecialchars(strtoupper($_POST['name']));
-$firstName =htmlspecialchars(strtoupper($_POST['firstName']));
+$name =strtoupper(htmlspecialchars($_POST['name']));
+$firstName =strtoupper(htmlspecialchars($_POST['firstName']));
 $birth =htmlspecialchars($_POST['birthday']);
 $email =htmlspecialchars($_POST['email']);
 $pseudo =htmlspecialchars($_POST['pseudo']);
@@ -88,48 +87,39 @@ $pwd =htmlspecialchars($_POST['pwd']);
 $newPwd =htmlspecialchars($_POST['newPwd']);
 $message="";
 
+    if($pwd!=$newPwd) {$message="<li>Mots de passe non identiques</li>";}
+      
+$addUser = new \Blog\Model\Subscribe();
 
-            if(empty($name)) {$message="<li>Nom invalide</li>";}
-            if(empty($firstName)) {$message="<li>Prénom invalide</li>";}
-            if(empty($birth)) {$message="<li>Date de naissance invalide</li>";}
-            if(empty($email)) {$message="<li>Email invalide</li>";}
-            if(empty($pseudo)) {$message="<li>Pseudo invalide</li>";}
-            if(empty($pwd)) {$message="<li>Mot de passe invalide</li>";}
-            if(empty($newPwd)) {$message="<li>Mot de passe invalide</li>";}
-            if($pwd!=$newPwd) {$message="<li>Mots de passe non identiques</li>";}
-
-            $addUser = new \Blog\Model\Subscribe();
-
-            if(empty($message)){
+if(empty($message))
+    {
+        $user = $addUser->checkUserLogin($pseudo);
                 
-            $user = $addUser->checkUserLogin($pseudo);
-           
-                if($user==false) 
-                {   
-                    $newUser = $addUser->setUser($name, $firstName, $birth, $email, $pseudo, $pwd);
-                    require('public/view/frontend/connect.php');
-
-                    
-                }
-                else
-                {
-                    echo('Ce Pseudo existe déjà');
-                    exit;
-                }
+            if($user==false) 
+            {   
+                $newUser = $addUser->setUser($name, $firstName, $birth, $email, $pseudo, $pwd);
+            
+                require('public/view/frontend/connect.php');
             }
-            else 
+            else
             {
-                echo($message);
-                die;
+                echo('Ce Pseudo existe déjà');
+                exit;
             }
-
-        require('public/view/frontend/subscribe.php');
     }
+    else 
+    {
+        echo($message);
+        die;
+    }
+
+    require('public/view/frontend/subscribe.php');
+}
 
 function checkLogin()
 {
-    $pseudo =htmlspecialchars($_POST['pseudo']);
-    $pwd=htmlspecialchars($_POST['pwd']);
+$pseudo =htmlspecialchars($_POST['pseudo']);
+$pwd=htmlspecialchars($_POST['pwd']);
 
     if(isset($pseudo) || isset($pwd))
     {
@@ -137,11 +127,8 @@ function checkLogin()
         $log = $login->login($pseudo, $pwd);
         
         if($log==false)
-        {
-            
-            connect();
-            echo('Les informations saisie ne permettent pas d\'identifier : ' . $_POST['pseudo'] );
-            
+        {            
+            echo('Les informations saisie ne permettent pas d\'identifier : ' . $pseudo );
         }
         else
         {
@@ -152,14 +139,11 @@ function checkLogin()
             listPosts();
             
         }
-
     }
     else
     {
-        throw new Exception('Vous devez renseigner tous les champs !');
-             
+        throw new Exception('Vous devez renseigner tous les champs !');     
     }
-
 }
 
 function disconnect()
@@ -182,16 +166,14 @@ $message = 'Nom : ' . $nom . "\r\n" . 'Prénom : ' . $prenom . "\r\n" . 'email :
 $headers = "Content-Type: text/plain; charset=utf-8\r\n";
 $headers .="From: " . $from . "<br>";
 
-
 if (mail($to, $subject, $message, $headers))
     {
-    ?><div class="alert alert-success" role="alert">
-    <h3>Bravo votre message a bien été envoyé. Je vous remercie.</h3><?php
-    header('Location: index.php?action=listPosts');}
+        ?><div class="alert alert-success" role="alert">
+        <h3>Bravo votre message a bien été envoyé. Je vous remercie.</h3><?php
+        header('Location: index.php?action=listPosts');}
     else
     {
-    echo 'erreur envoi';
-    die;
+        echo 'erreur envoi';
+        die;
     }
-
 }
