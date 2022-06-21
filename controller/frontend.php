@@ -2,17 +2,17 @@
 session_start();
 
 // Chargement des classes
-require_once('model/PostManager.php');
-require_once('model/CommentManager.php');
-require_once('model/UserManager.php');
-require_once('model/LoginManager.php');
+require_once 'model/PostManager.php';
+require_once 'model/CommentManager.php';
+require_once 'model/UserManager.php';
+require_once 'model/LoginManager.php';
 
 function listPosts()
 {
     $postManager = new \Blog\Model\PostManager();
     $posts = $postManager->getPosts();
     
-    require('public/view/frontend/listPostView.php');
+    require 'public/view/frontend/listPostView.php';
 }
 
 function readAll()
@@ -22,11 +22,11 @@ function readAll()
 
     if(isset($_GET['id']))
     {
-    require('public/view/frontend/postList.php');
+    require 'public/view/frontend/postList.php';
     }
     else
     {
-    require('public/view/backend/postList.php');
+    require 'public/view/backend/postList.php';
     }
 }
 
@@ -38,7 +38,7 @@ function post()
     $post = $postManager->getPost(htmlspecialchars($_GET['id']));
     $comments = $commentManager->getComments(htmlspecialchars($_GET['id']));
 
-    require('public/view/frontend/postView.php');
+    require 'public/view/frontend/postView.php';
 }
 
 function readallComment()
@@ -49,7 +49,7 @@ function readallComment()
     $post = $postManager->getPost(htmlspecialchars($_GET['id']));
     $comments = $commentManager->readAllComment(htmlspecialchars($_GET['id']));
         
-    require('public/view/frontend/postView.php');
+    require 'public/view/frontend/postView.php';
 }
 
 function addComment($postId, $comment)
@@ -68,12 +68,12 @@ function addComment($postId, $comment)
 
 function subscribe()
 {
-    require('public/view/frontend/subscribe.php');
+    require 'public/view/frontend/subscribe.php';
 }
 
 function connect()
 {
-    require('public/view/frontend/connect.php');
+    require 'public/view/frontend/connect.php';
 }
 
 function addUser()
@@ -99,7 +99,7 @@ if(empty($message))
             {   
                 $newUser = $addUser->setUser($name, $firstName, $birth, $email, $pseudo, $pwd);
             
-                require('public/view/frontend/connect.php');
+                require 'public/view/frontend/connect.php';
             }
             else
             {
@@ -113,7 +113,7 @@ if(empty($message))
         die;
     }
 
-    require('public/view/frontend/subscribe.php');
+    require 'public/view/frontend/subscribe.php';
 }
 
 function checkLogin()

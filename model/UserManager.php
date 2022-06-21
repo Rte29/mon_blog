@@ -2,7 +2,7 @@
 
 namespace Blog\Model;
 
-require_once("model/Manager.php");
+require_once "model/Manager.php";
 
 class Subscribe extends Manager
 {

@@ -2,8 +2,8 @@
 
 namespace Blog\Model;
 
-require_once("model/Manager.php");
-require_once("controller/frontend.php");
+require_once "model/Manager.php";
+require_once "controller/frontend.php";
 
 class LoginManager extends Manager
 {

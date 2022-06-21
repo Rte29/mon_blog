@@ -1,31 +1,31 @@
 <?php
 
 // Chargement des classes
-require_once('model/PostManager.php');
-require_once('model/CommentManager.php');
-require_once('model/UserManager.php');
-require_once('model/LoginManager.php');
+require_once 'model/PostManager.php';
+require_once 'model/CommentManager.php';
+require_once 'model/UserManager.php';
+require_once 'model/LoginManager.php';
 
 function admin()
 {
-    require('public/view/backend/admin.php');
+    require 'public/view/backend/admin.php';
 }
 
 function postList()
 {
     $postManager = new \Blog\Model\PostManager();
     $posts = $postManager->getPosts();
-    require('public/view/frontend/postList.php');
+    require 'public/view/frontend/postList.php';
 }
 
 function postAdmin()
 {
-    require('public/view/Backend/postAdmin.php');
+    require 'public/view/Backend/postAdmin.php';
 }
 
 function addPosts()
 {
-    require('public/view/backend/addpost.php');
+    require 'public/view/backend/addpost.php';
 }
 
 function setPost()
@@ -85,7 +85,7 @@ function uptPt()
     $post = new \Blog\Model\PostManager();
     $posts = $post->getAllPosts();
 
-    require('public/view/backend/postListForUpdate.php');
+    require 'public/view/backend/postListForUpdate.php';
 }
 
 function uptPtView()
@@ -95,7 +95,7 @@ function uptPtView()
     $postManager = new \Blog\Model\PostManager();
     $post = $postManager->getPost($postId);
 
-    require('public/view/backend/uptPostView.php');
+    require 'public/view/backend/uptPostView.php';
 
 }
 
@@ -118,7 +118,7 @@ function uptPosts()
 
 function commentAdmin()
 {
-    require('public/view/backend/commentAdmin.php');
+    require 'public/view/backend/commentAdmin.php';
 }
 
 function commentValidation()
@@ -128,7 +128,7 @@ function commentValidation()
 
     $posts = $postManager->getAllPosts();
        
-    require('public/view/backend/commentValidation.php');
+    require 'public/view/backend/commentValidation.php';
 }
 
 function validateComments()
@@ -162,17 +162,17 @@ function comments()
 
     $posts = $postManager->getAllPosts();
        
-    require('public/view/backend/comments.php');
+    require 'public/view/backend/comments.php';
 }
 
 function accountAdmin()
 {
-    require('public/view/backend/accountAdmin.php');
+    require 'public/view/backend/accountAdmin.php';
 }
 
 function lastAccount()
 {
-    require('public/view/backend/lastAccount.php');
+    require 'public/view/backend/lastAccount.php';
 }
 
 function searchAccount()
@@ -184,7 +184,7 @@ function searchAccount()
         
     $accounts = $user->getUsers($start, $end);
 
-    require('public/view/backend/account.php');
+    require 'public/view/backend/account.php';
 }
 
 function editUser()
@@ -194,7 +194,7 @@ $userId = $_GET['id'];
 $user = new \Blog\Model\Subscribe();
 $editUser = $user->getUser($userId);
 
-require('public/view/backend/editAccount.php');
+require 'public/view/backend/editAccount.php';
 }
 
 function deleteUser()
