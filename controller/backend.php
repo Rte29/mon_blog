@@ -144,8 +144,6 @@ function cancelComments()
     $commentManager = new \Blog\Model\CommentManager();
     $cnl = $commentManager->cancelComment(htmlspecialchars($_GET['id']));
 
-
-
     header('Location: index.php?action=commentValidation');
 }
 
@@ -153,8 +151,6 @@ function cancelComments2()
 {
     $commentManager = new \Blog\Model\CommentManager();
     $cnl = $commentManager->cancelComment(htmlspecialchars($_GET['id']));
-
-    
 
     header('Location: index.php?action=comments');
 }
@@ -189,7 +185,6 @@ function searchAccount()
     $accounts = $user->getUsers($start, $end);
 
     require('public/view/backend/account.php');
-
 }
 
 function editUser()
