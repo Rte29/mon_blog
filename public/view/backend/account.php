@@ -1,24 +1,23 @@
 <?php
 setcookie('start', $_POST['start']);
 setcookie('end', $_POST['end']); 
-if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
-    
-include('./public/view/frontend/navigation.php');
 
-?>
+if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1)
+{
+    include('./public/view/frontend/navigation.php');
 
-<body>
-    <div class="container">
-        <section class="row">
-            <h1>Les derniers enregistrements</h1><br/>
-            <p><a href="index.php?action=lastAccount">Retour ...</a></p>
-                
-            <div class="row">
-                <div class="pb-3">
-                    <?php ob_start(); ?>
-                            <?php
-                                while ($account = $accounts->fetch())
-                                {
+    ?>
+    <body>
+        <div class="container">
+            <section class="row">
+                <h1>Les derniers enregistrements</h1><br/>
+                <p><a href="index.php?action=lastAccount">Retour ...</a></p>
+                    
+                <div class="row">
+                    <div class="pb-3">
+                        <?php ob_start(); 
+                            while ($account = $accounts->fetch())
+                            {
                             ?>
                                 <div class="news">
                                     <div class="col-sm-12 pb-4">
@@ -30,21 +29,19 @@ include('./public/view/frontend/navigation.php');
                                     </div>
                                 </div>
                             <?php
-                                }
+                            }
                                 $accounts->closeCursor();
                                 $content = ob_get_clean(); 
                             require('./public/view/frontend/template.php'); 
                             ?>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </div>
-</body>
-
+            </section>
+        </div>
+    </body>
 <?php 
 include('./public/view/frontend/footer.php');
 
-var_dump($_COOKIE);
 }
 else{
     header('Location: index.php?action=listPosts');
