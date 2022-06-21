@@ -14,7 +14,6 @@ class Subscribe extends Manager
         $tab = $req->fetch();
                        
         return $tab;
-        
     }
 
     public function setUser($name, $firstName, $birth, $email, $pseudo, $pwd)
@@ -24,8 +23,7 @@ class Subscribe extends Manager
         VALUES(?,?,?,?,0, NOW(), NOW(),?,?)');
         $ins->execute(array($name, $firstName, $birth, $email, $pseudo, md5($pwd)));
         
-        return $ins;
-        
+        return $ins;    
     }
 
     public function getUsers($start, $end)
@@ -57,6 +55,5 @@ class Subscribe extends Manager
         $del->execute(['id'=>$userId]);
 
         return $del;
-
     }
 }
