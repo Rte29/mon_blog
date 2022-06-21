@@ -25,6 +25,5 @@ class LoginManager extends Manager
         $comments->execute(array($postId));
 
         return $comments;
-
     }    
 }

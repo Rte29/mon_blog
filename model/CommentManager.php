@@ -14,7 +14,6 @@ class CommentManager extends Manager
         $comments->execute(array($postId));
 
         return $comments;
-
     }
 
     public function readAllComment($postId)
@@ -25,7 +24,6 @@ class CommentManager extends Manager
         $comments->execute(array($postId));
 
         return $comments;
-
     }
 
     public function readCommentsToValidate($postId)
@@ -36,7 +34,6 @@ class CommentManager extends Manager
         $comments->execute(array($postId));
 
         return $comments;
-
     }
 
     public function getAllComments($postId)
@@ -46,7 +43,6 @@ class CommentManager extends Manager
         $comments->execute(array($postId));
 
         return $comments;
-
     }
 
     public function getAllUserComments($userId)
@@ -56,7 +52,6 @@ class CommentManager extends Manager
         $comments->execute(array($userId));
 
         return $comments;
-
     }
 
     public function setComment($postId, $comment)
@@ -76,7 +71,6 @@ class CommentManager extends Manager
         $del->execute(['id'=>$postId]);
 
         return $del;
-
     }
 
     public function deleteAllUserComments($userId)
@@ -86,7 +80,6 @@ class CommentManager extends Manager
         $del->execute(['id'=>$userId]);
 
         return $del;
-
     }
 
     public function validateComment($commentId)
