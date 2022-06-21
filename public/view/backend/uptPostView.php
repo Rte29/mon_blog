@@ -32,8 +32,7 @@ include('./public/view/frontend/navigation.php');
                             </div>
                         </div>
                         <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="id">Texte</label>
+                            <div class="form-group col-xs-12 floating-label-form-group controls">                                
                                 <input type="hidden" name="id" id="id" value="<?php echo $_GET['id'] ?>">
                             </div>
                         </div>

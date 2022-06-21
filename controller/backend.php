@@ -33,14 +33,16 @@ function setPost()
 $title = htmlspecialchars($_POST['title']);
 $author = $_SESSION['AUTHOR'];
 $text = htmlspecialchars($_POST['text']);
+$category = htmlspecialchars($_POST['category']);
+$status = htmlspecialchars($_POST['status']);
 
-    if(htmlspecialchars($_POST['category']) == "html")
+    if($category == "html")
         {$cat=1;}
-    elseif(htmlspecialchars($_POST['category']) == "css")
+    elseif($category == "css")
         {$cat=2;}
     else{$cat=3;}
     
-    if(htmlspecialchars($_POST['status']) == "publish")
+    if($status == "publish")
         {$status=1;}
     else{$status=0;}
 
