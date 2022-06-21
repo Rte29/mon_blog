@@ -19,30 +19,28 @@ function postList()
 }
 
 function postAdmin()
-    {
+{
     require('public/view/Backend/postAdmin.php');
-    }
+}
 
 function addPosts()
 {
-    //$categManager = new \Blog\Model\CategManager();
-    //$categs= $categManager->getCateg();
-
     require('public/view/backend/addpost.php');
 }
 
 function setPost()
 {
-    $title = htmlspecialchars($_POST['title']);
-    $author = $_SESSION['AUTHOR'];
-    $text = htmlspecialchars($_POST['text']);
-    if($_POST['category'] == "html")
+$title = htmlspecialchars($_POST['title']);
+$author = $_SESSION['AUTHOR'];
+$text = htmlspecialchars($_POST['text']);
+
+    if(htmlspecialchars($_POST['category']) == "html")
         {$cat=1;}
-    elseif($_POST['category'] == "css")
+    elseif(htmlspecialchars($_POST['category']) == "css")
         {$cat=2;}
     else{$cat=3;}
     
-    if($_POST['status'] == "publish")
+    if(htmlspecialchars($_POST['status']) == "publish")
         {$status=1;}
     else{$status=0;}
 
@@ -60,7 +58,7 @@ function setPost()
 
 function cancel()
 {
-    $postId = $_GET['id'];
+    $postId = htmlspecialchars($_GET['id']);
 
     $postManager = new \Blog\Model\PostManager();
     $commentManager = new \Blog\Model\CommentManager();
@@ -92,7 +90,7 @@ function uptPt()
 
 function uptPtView()
 {
-    $postId = $_GET['id'];
+    $postId = htmlspecialchars($_GET['id']);
 
     $postManager = new \Blog\Model\PostManager();
     $post = $postManager->getPost($postId);
@@ -104,9 +102,9 @@ function uptPtView()
 
 function uptPosts()
 {
-    $postTitle = $_POST['title'];
-    $postContent = $_POST['text']; 
-    $postId = $_POST['id'];
+    $postTitle = htmlspecialchars($_POST['title']);
+    $postContent = htmlspecialchars($_POST['text']); 
+    $postId = htmlspecialchars($_POST['id']);
 
     echo($postTitle);
     echo($postContent);
@@ -136,7 +134,7 @@ function commentValidation()
 function validateComments()
 {
     $commentManager = new \Blog\Model\CommentManager();
-    $val = $commentManager->validateComment($_GET['id']);
+    $val = $commentManager->validateComment(htmlspecialchars($_GET['id']));
 
     header('Location: index.php?action=commentValidation');
 }
@@ -144,7 +142,7 @@ function validateComments()
 function cancelComments()
 {
     $commentManager = new \Blog\Model\CommentManager();
-    $cnl = $commentManager->cancelComment($_GET['id']);
+    $cnl = $commentManager->cancelComment(htmlspecialchars($_GET['id']));
 
 
 
@@ -154,7 +152,7 @@ function cancelComments()
 function cancelComments2()
 {
     $commentManager = new \Blog\Model\CommentManager();
-    $cnl = $commentManager->cancelComment($_GET['id']);
+    $cnl = $commentManager->cancelComment(htmlspecialchars($_GET['id']));
 
     
 
@@ -206,7 +204,7 @@ require('public/view/backend/editAccount.php');
 
 function deleteUser()
 {
-    $userId = $_GET['id'];
+    $userId = htmlspecialchars($_GET['id']);
 
     $userManager = new \Blog\Model\Subscribe();
     $commentManager = new \Blog\Model\CommentManager();
