@@ -20,14 +20,14 @@ include('./public/view/frontend/navigation.php');
                         <div class="row control-group">
                             <div class="form-group col-xs-12 controls">
                                 <label for="title">Titre</label>
-                                <input type="text" class="form-control" name="title" id="title" required data-validation-required-message="Please enter title.">
+                                <input type="text" class="form-control" name="title" id="title" required data-validation-required-message="Merci d'entrer le titre.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 controls">
                                 <label for="text">Texte</label>
-                                <textarea id="text" name="text" rows="5" cols="100"></textarea>
+                                <textarea id="text" name="text" rows="5" cols="100" required></textarea>
                                 
                             </div>
                         </div>
