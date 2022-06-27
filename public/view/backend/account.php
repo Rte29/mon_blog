@@ -1,6 +1,6 @@
 <?php
-setcookie('start', $_POST['start']);
-setcookie('end', $_POST['end']); 
+setcookie('start', htmlspecialchars($_POST['start']));
+setcookie('end', htmlspecialchars($_POST['end'])); 
 
 if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1)
 {
@@ -18,7 +18,7 @@ if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1)
                         <?php ob_start(); 
                             while ($account = $accounts->fetch())
                             {
-                            ?>
+                        ?>
                                 <div class="news">
                                     <div class="col-sm-12 pb-4">
                                         <h4><?= htmlspecialchars($account['last_name'] . ' ' . $account['first_name']) ?></h4>
@@ -28,7 +28,7 @@ if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1)
                                         <em><a href="index.php?action=editUser&amp;id=<?= $account['id'] ?>" class="btn btn-primary" >Editer</a></em>
                                     </div>
                                 </div>
-                            <?php
+                        <?php
                             }
                                 $accounts->closeCursor();
                                 $content = ob_get_clean(); 

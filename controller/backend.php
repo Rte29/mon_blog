@@ -29,12 +29,12 @@ function addPosts()
 }
 
 function setPost()
-{
-$title = filter_input(INPUT_POST,'title');
+{ 
+$title = htmlspecialchars($_POST['title']);
 $author = $_SESSION['AUTHOR'];
-$text = filter_input(INPUT_POST,'text');
-$category = filter_input(INPUT_POST,'category');
-$status = filter_input(INPUT_POST,'status');
+$text = htmlspecialchars($_POST['text']);
+$category = htmlspecialchars($_POST['category']);
+$status = htmlspecialchars($_POST['status']);
 
     if($category == "html")
         {$cat=1;}

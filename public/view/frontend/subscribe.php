@@ -51,7 +51,7 @@
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12">
-                                <label>mot de passe</label>
+                                <label>Mot de passe</label>
                                 <input type="password" class="form-control" pattern=".{8,}" name="pwd" id="pwd" required title="8 characters minimum">
                                 <p class="help-block text-danger"></p>
                             </div>

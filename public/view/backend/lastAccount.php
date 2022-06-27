@@ -49,7 +49,7 @@ include('./public/view/frontend/navigation.php');
     <?php 
 
 include('./public/view/frontend/footer.php');
-var_dump($_COOKIE);
+
 }
 else{
     header('Location: index.php?action=listPosts');

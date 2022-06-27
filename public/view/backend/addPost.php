@@ -34,9 +34,9 @@ include('./public/view/frontend/navigation.php');
                                 <br>
                                 
                             <div class="option">
-                                <label for="category">quelle catégorie ?</label><br />
+                                <label for="category">Quelle catégorie ?</label><br />
                                 <select name="category" id="scategory" required>
-                                    <option value="">--choisissez une catégorie--</option>
+                                    <option value="">--Choisissez une catégorie--</option>
                                         <option value="html">HTML</option>
                                         <option value="css">CSS</option>
                                         <option value="php">PHP</option>
@@ -47,9 +47,9 @@ include('./public/view/frontend/navigation.php');
                             <div class="option">
                                 <label for="status">Quel est le status</label><br />
                                 <select name="status" id="status" required>
-                                    <option value="">--choisissez un status--</option>
-                                        <option value="publish">publier</option>
-                                        <option value="standBy">attente</option>
+                                    <option value="">--Choisissez un status--</option>
+                                        <option value="publish">Publier</option>
+                                        <option value="standBy">Attente</option>
                                 </select>
                             </div>
 

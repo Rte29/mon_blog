@@ -3,7 +3,10 @@ if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
     
 include('./public/view/frontend/navigation.php');
 ?>
-    <?php ob_start(); ?>
+<body>
+    <div class="container">
+
+<?php ob_start(); ?>
         <section>
             <h1>Tous les commentaires</h1>
             <p><a href="index.php?action=commentAdmin">Retour ...</a></p><br/>
@@ -12,7 +15,7 @@ include('./public/view/frontend/navigation.php');
         {
     ?>
             <div class="news">
-                <h3><?= htmlspecialchars($data['title']) ?></h3>
+                <h5><?= htmlspecialchars($data['title']) ?></h5>
                 <?php
                     $comments = $commentManager->readAllComment($data['post_id']);
                     while ($comment = $comments->fetch())
@@ -38,6 +41,8 @@ include('./public/view/frontend/navigation.php');
     ?>
 
         </section>
+    </div>
+</body>
 <?php include('./public/view/frontend/footer.php'); 
 }
 else{

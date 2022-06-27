@@ -1,12 +1,7 @@
 <?php 
-$title = 'Mon blog';
 
 include('navigation.php');
-
 ?>
-
-
-
 <section id="contact">
 <?php
 if (isset($newUser))
@@ -30,14 +25,14 @@ if (isset($newUser))
                     <form action="index.php?action=checkLogin" method="post">
                         <div class="row control-group">
                             <div class="form-group col-xs-12 controls">
-                                <label for="pseudo">pseudo</label>
+                                <label for="pseudo">Pseudo</label>
                                 <input type="text" class="form-control"  name="pseudo" placeholder="toto95" id="pseudo" required data-validation-required-message="Merci d'entrer votre pseudo.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 controls">
-                                <label for="pwd">mot de passe</label>
+                                <label for="pwd">Mot de passe</label>
                                 <input type="password" class="form-control" name="pwd" placeholder="********" id="pwd" required data-validation-required-message="Merci d'entrer votre mot de passe.">
                                 <p class="help-block text-danger"></p>
                             </div>
