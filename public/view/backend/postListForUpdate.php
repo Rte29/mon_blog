@@ -2,9 +2,10 @@
 if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
     
 include('./public/view/frontend/navigation.php');
-
-ob_start(); 
 ?>
+<body>
+    <div class="container">
+<?php ob_start();?>
 
 <section>
 <h1>Les billets !</h1>
@@ -14,10 +15,10 @@ ob_start();
     {
 ?>
     <div class="news">
-        <h3>
+        <h5>
             <?= htmlspecialchars($data['title']) ?> 
             <em>le <?= $data['post_creation_date_fr'] ?></em>
-        </h3>
+        </h5>
         
         <p>
             <?= nl2br(htmlspecialchars($data['post_content'])) ?>
@@ -34,6 +35,8 @@ ob_start();
 require('./public/view/frontend/template.php');
 ?>
 </section>
+</div>
+</body>
 <?php include('./public/view/frontend/footer.php'); 
 }
 else{
