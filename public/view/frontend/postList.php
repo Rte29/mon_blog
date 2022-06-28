@@ -5,7 +5,7 @@ include('navigation.php');
 <body>
     <section id="contact">
         <?php
-        if(isset($_GET['id']))
+        if(isset($_GET['id']) && $_GET['id']<>'frontend')
         {
         ?>
         <div class="alert alert-success" role="alert" >
