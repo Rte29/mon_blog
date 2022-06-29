@@ -1,6 +1,18 @@
 <?php $title = 'Mon blog';
 include('navigation.php');
+if (isset($_GET['id'])){
+    ?>
+        <div class="container">
+            <section>
+            <div class="alert alert-success" role="alert">
+                <h3>Votre message a bien été envoyé.<br> Je vous répondrai dans les plus brefs delais.</h3>
+            </div>
+</section>
+        </div>
+    <?php 
+    } 
 include('hero.php');
+
 ?>
 <body>
 <div class="container">

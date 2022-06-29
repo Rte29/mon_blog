@@ -72,7 +72,7 @@ function cancel()
     if(empty($comment['comment_id']))
     {
         $delete = $postManager->deletePost($postId);
-        header('Location: index.php?action=postList');
+        header('Location: index.php?action=cancelPost');
     }
     else{
 
@@ -107,13 +107,14 @@ function uptPosts()
     $postTitle = htmlspecialchars($_POST['title']);
     $postContent = htmlspecialchars($_POST['text']); 
     $postId = htmlspecialchars($_POST['id']);
+    $status = htmlspecialchars($_POST['status']);
 
-    echo($postTitle);
-    echo($postContent);
-    echo ($postId);
+    if($status == "publish"){
+        $status=1;
+    }else{$status=0;}
 
     $postManager = new \Blog\Model\PostManager();
-    $updatePost = $postManager->updatePost($postTitle, $postContent, $postId);
+    $updatePost = $postManager->updatePost($postTitle, $postContent, $postId ,$status);
     
     header('Location: index.php?action=uptPost');
 }
@@ -189,14 +190,33 @@ function searchAccount()
     require 'public/view/backend/account.php';
 }
 
+function allAccount()
+{
+    $user = new \Blog\Model\Subscribe();
+        
+    $accounts = $user->getAllUsers();
+
+    require 'public/view/backend/allAccount.php';
+}
+
 function editUser()
 {
-$userId = $_GET['id'];
+    $userId = $_GET['id'];
 
-$user = new \Blog\Model\Subscribe();
-$editUser = $user->getUser($userId);
+    $user = new \Blog\Model\Subscribe();
+    $editUser = $user->getUser($userId);
 
 require 'public/view/backend/editAccount.php';
+}
+
+function editUserAll()
+{
+    $userId = $_GET['id'];
+
+    $user = new \Blog\Model\Subscribe();
+    $editUserAll = $user->getUser($userId);
+
+require 'public/view/backend/editAccountAll.php';
 }
 
 function deleteUser()

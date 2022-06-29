@@ -103,8 +103,14 @@ try {
         elseif ($_GET['action'] == 'lastAccount') {
             lastAccount();
         }
+        elseif ($_GET['action'] == 'allAccount') {
+            allAccount();
+        }
         elseif ($_GET['action'] == 'searchAccount') {
             searchAccount();
+        }
+        elseif ($_GET['action'] == 'editUserAll') {
+            editUserAll();
         }
         elseif ($_GET['action'] == 'editUser') {
             editUser();

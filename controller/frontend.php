@@ -168,9 +168,12 @@ $headers .="From: " . $from . "<br>";
 
 if (mail($to, $subject, $message, $headers))
     {
-        ?><div class="alert alert-success" role="alert">
-        <h3>Bravo votre message a bien été envoyé. Je vous remercie.</h3><?php
-        header('Location: index.php?action=listPosts');}
+        ?>
+        <div class="alert alert-success" role="alert">
+            <h3>Bravo votre message a bien été envoyé. Je vous remercie.</h3>
+        </div>
+        <?php
+        header('Location: index.php?action=listPosts&id=1');}
     else
     {
         echo 'erreur envoi';

@@ -36,6 +36,15 @@ class Subscribe extends Manager
         return $req;
     }
 
+    public function getAllUsers()
+        {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT id, last_name, first_name, email, DATE_FORMAT(user_registration_date, \'%d/%m/%Y\') 
+        AS user_registration_date_fr, username FROM user ORDER BY last_name DESC ');
+                
+        return $req;
+    }
+
     public function getUser($userId)
     {
         $db = $this->dbConnect();

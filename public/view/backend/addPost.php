@@ -35,7 +35,7 @@ include('./public/view/frontend/navigation.php');
                                 
                             <div class="option">
                                 <label for="category">Quelle catégorie ?</label><br />
-                                <select name="category" id="scategory" required>
+                                <select name="category" id="category" required>
                                     <option value="">--Choisissez une catégorie--</option>
                                         <option value="html">HTML</option>
                                         <option value="css">CSS</option>

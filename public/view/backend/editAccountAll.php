@@ -8,15 +8,15 @@ include('./public/view/frontend/navigation.php');
         <p><a href="index.php?action=allAccount">Retour ...</a></p><br/>
         <div class="rows">
             <div class="col-lg-8 col-lg-offset-2">
-                <h1>Pseudo : <?= htmlspecialchars($editUser['username']) ?></h1>
-                <h3><?php echo(htmlspecialchars($editUser['last_name']) . ' ' . htmlspecialchars($editUser['first_name'])) ?></h3>
-                <h6><em>enregistré le <?= $editUser['user_registration_date_fr'] ?> et modifié le <?= $editUser['user_update_date_fr'] ?></em></h6><br>
+                <h1>Pseudo : <?= htmlspecialchars($editUserAll['username']) ?></h1>
+                <h3><?php echo(htmlspecialchars($editUserAll['last_name']) . ' ' . htmlspecialchars($editUserAll['first_name'])) ?></h3>
+                <h6><em>enregistré le <?= $editUserAll['user_registration_date_fr'] ?> et modifié le <?= $editUserAll['user_update_date_fr'] ?></em></h6><br>
                 <h6>date de naissance: </h6>
-                <p><?= nl2br(htmlspecialchars($editUser['birthday_fr'])) ?></p><br>
+                <p><?= nl2br(htmlspecialchars($editUserAll['birthday_fr'])) ?></p><br>
                 <h6>email : </h6>
-                <p><?= nl2br(htmlspecialchars($editUser['email'])) ?></p><br>
+                <p><?= nl2br(htmlspecialchars($editUserAll['email'])) ?></p><br>
                 <p><?php 
-                    if($editUser['admin_role'] ==1)
+                    if($editUserAll['admin_role'] ==1)
                     {
                         ?>
                         <h4><em>ADMINISTRATEUR</em></h4><br>
