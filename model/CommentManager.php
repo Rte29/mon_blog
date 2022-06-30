@@ -10,7 +10,7 @@ class CommentManager extends Manager
     {
         $db = $this->dbConnect();
         $comments = $db->prepare('SELECT comment_id, comment, DATE_FORMAT(comment_creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_creation_date_fr, username
-        FROM comment LEFT JOIN user ON comment.id = user.id WHERE post_id = ? AND comment_status = "1" ORDER BY comment_creation_date DESC LIMIT 0, 5');
+        FROM comment LEFT JOIN user ON comment.id = user.id WHERE post_id = ? AND comment_status = "1" ORDER BY comment_creation_date DESC LIMIT 0, 3');
         $comments->execute(array($postId));
 
         return $comments;
