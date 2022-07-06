@@ -26,6 +26,12 @@ include('./public/view/frontend/navigation.php');
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 controls">
+                                <label for="chapo">Chapo</label>
+                                <textarea id="chapo" name="chapo" rows="3" cols="100" required></textarea>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 controls">
                                 <label for="text">Texte</label>
                                 <textarea id="text" name="text" rows="5" cols="100" required></textarea>
                                 

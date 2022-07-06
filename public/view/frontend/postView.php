@@ -19,8 +19,7 @@ if (isset($affectedLines))
 
             <div class="news">
                 <h3>
-                    <?= htmlspecialchars($post['title']) ?>
-                    <em>le <?= $post['post_creation_date_fr'] ?></em>
+                    <em>créé le <?= $post['post_creation_date_fr'] ?> et modifié le <?= $post['post_update_date_fr'] ?></em>
                 </h3>
                 
                 <p>

@@ -3,12 +3,12 @@
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col col-md-4">
+                    <div class="footer-col col-md-3">
                         <h3>Adresse</h3>
                         <p>29 rte de Lambelkerec
                             <br>28940 Talludin</p>
                     </div>
-                    <div class="footer-col col-md-4">
+                    <div class="footer-col col-md-3">
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
@@ -28,9 +28,13 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-col col-md-4">
+                    <div class="footer-col col-md-3">
                         <h3>A propos de</h3>
-                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                        <p>Freelance est un theme open source Bootstrap créé par <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                    <div class="footer-col col-md-3">
+                        <h3>Gestion du site</h3>
+                        <p><a href="index.php?action=admin">administration</a></p>
                     </div>
                 </div>
             </div>

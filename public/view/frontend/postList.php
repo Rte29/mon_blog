@@ -32,9 +32,9 @@ include('navigation.php');
                     </h5>
                     
                     <p>
-                        <?= nl2br(htmlspecialchars($data['post_content'])) ?>
+                        <?= nl2br(htmlspecialchars($data['chapo'])) ?>
                         <br />
-                        <em><a href="index.php?action=post&amp;id=<?= $data['post_id'] ?>">Editer</a></em>
+                        <em><a href="index.php?action=post&amp;id=<?= $data['post_id'] ?>">Lire la suite</a></em>
                     </p>
                 </div>
             <?php

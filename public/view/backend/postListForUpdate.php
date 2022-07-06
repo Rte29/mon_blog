@@ -21,7 +21,7 @@ include('./public/view/frontend/navigation.php');
         </h5>
         
         <p>
-            <?= nl2br(htmlspecialchars($data['post_content'])) ?>
+            <?= nl2br(htmlspecialchars($data['chapo'])) ?>
             <br />
             <em><a href="index.php?action=uptPostView&amp;id=<?php echo $data['post_id'] ?>">Modifier</a></em>
             

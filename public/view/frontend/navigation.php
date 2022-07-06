@@ -110,8 +110,8 @@
                         <li class="hidden">
                             <a href="#page-top"></a>
                         </li>
-                        <!--<li class="page-scroll">
-                            <a href="#portfolio">Les articles</a>-->
+                        <li class="page-scroll">
+                            <a href="index.php?action=postList">Les articles</a>
                         </li>
                         <li class="page-scroll">
                             <a href="#about">About</a>

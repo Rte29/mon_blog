@@ -32,7 +32,7 @@ include('hero.php');
                             </h3>
                             <div class="d-flex">    
                             <p class="card-text overflow-hidden">
-                                <?= nl2br(htmlspecialchars($data['post_content'])) ?>
+                                <?= nl2br(htmlspecialchars($data['chapo'])) ?>
                                 <br />
                                 <em><a href="index.php?action=post&amp;id=<?= $data['post_id'] ?>">Lire la suite</a></em>
                             </p>

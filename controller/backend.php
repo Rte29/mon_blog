@@ -32,6 +32,7 @@ function setPost()
 { 
 $title = htmlspecialchars($_POST['title']);
 $author = $_SESSION['AUTHOR'];
+$chapo = htmlspecialchars($_POST['chapo']);
 $text = htmlspecialchars($_POST['text']);
 $category = htmlspecialchars($_POST['category']);
 $status = htmlspecialchars($_POST['status']);
@@ -48,7 +49,7 @@ $status = htmlspecialchars($_POST['status']);
 
     $postManager = new \Blog\Model\PostManager();
 
-    $affectedLines = $postManager->setPost($title, $author, $text, $cat, $status);
+    $affectedLines = $postManager->setPost($title, $author, $chapo, $text, $cat, $status);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
@@ -105,6 +106,7 @@ function uptPtView()
 function uptPosts()
 {
     $postTitle = htmlspecialchars($_POST['title']);
+    $chapo = htmlspecialchars($_POST['chapo']);
     $postContent = htmlspecialchars($_POST['text']); 
     $postId = htmlspecialchars($_POST['id']);
     $status = htmlspecialchars($_POST['status']);
@@ -114,7 +116,7 @@ function uptPosts()
     }else{$status=0;}
 
     $postManager = new \Blog\Model\PostManager();
-    $updatePost = $postManager->updatePost($postTitle, $postContent, $postId ,$status);
+    $updatePost = $postManager->updatePost($postTitle, $chapo, $postContent, $postId ,$status);
     
     header('Location: index.php?action=uptPost');
 }
@@ -233,12 +235,12 @@ function deleteUser()
     if(empty($comment['comment_id']))
     {
         $delete = $userManager->deleteUser($userId);
-        header('Location: index.php?action=lastAccount');
+        header('Location: index.php?action=allAccount');
     }
     else{
 
         $deleteComments = $commentManager->deleteAllUserComments($userId);
         $delete = $userManager->deleteUser($userId);
-        header('Location: index.php?action=lastAccount');
+        header('Location: index.php?action=allAccount');
     }
 }

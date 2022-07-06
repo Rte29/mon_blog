@@ -31,7 +31,7 @@
                         <li>Automatise certaines tâches pour vous, par exemple la gestion des stocks ou même la réservation des rendez-vous dans votre agenda</li>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="public\img\CV.pdf" class="btn btn-lg btn-outline">
+                    <a href="public\img\CV.pdf" target="_blank" class="btn btn-lg btn-outline">
                         <i class="fa fa-download"></i> Téléchargez mon CV
                     </a>
                 </div>
