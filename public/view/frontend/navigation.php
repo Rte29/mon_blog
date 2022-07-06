@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -44,28 +44,94 @@
                 <a class="navbar-brand" href="index.php?action=listPosts">Mon Blog</a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">Les articles</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li>
-                    <li class="page-scroll">
-                    <a href="index.php?action=connect">identifiez-vous</a>
-                    </li>
-                </ul>
-            </div>
+           
+            <?php 
+            if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
+            ?>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="index.php?action=postList">Les articles</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="index.php?action=listPosts#about">A propos de</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="index.php?action=listPosts#contact">Contact</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="index.php?action=admin">gestion admin</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="index.php?action=disconnect">Deconnexion</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#"><?php echo$_SESSION['PSEUDO'] ?></a>
+                        </li>
+                    </ul>
+                </div>
+            <?php
+                }
+                elseif (isset ($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==0){
+            ?>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="hidden">
+                                <a href="#page-top"></a>
+                            </li>
+                            <li class="page-scroll">
+                                <a href="index.php?action=postList">Les articles</a>
+                            </li>
+                            <li class="page-scroll">
+                                <a href="#about">About</a>
+                            </li>
+                            <li class="page-scroll">
+                                <a href="#contact">Contact</a>
+                            </li>
+                            <li class="page-scroll">
+                                <a href="index.php?action=disconnect">Deconnexion</a>
+                            </li>
+                            <li class="page-scroll">
+                                <a href="#"><?= $_SESSION['PSEUDO'] ?></a>
+                            </li>    
+                        </ul>
+                    </div>
+            <?php
+                }
+                else{
+            ?>
+
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="index.php?action=postList">Les articles</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#contact">Contact</a>
+                        </li>
+                        <li>
+                            <ul class="sous">
+                                <li><a href="index.php?action=subscribe">je m'inscrit</a></li>
+                                <li><a href="index.php?action=connect">j'ai un compte</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            <?php
+                }
+            ?>   
         </div>
     </nav>
 
-    </body>
-    </html>
+</body>
+</html>
