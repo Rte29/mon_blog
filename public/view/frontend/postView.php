@@ -23,7 +23,7 @@ if (isset($affectedLines))
                 </h3>
                 
                 <p>
-                    <?= nl2br(htmlspecialchars($post['post_content'])) ?>
+                    <?= nl2br(htmlspecialchars($post['chapo'])) . nl2br(htmlspecialchars($post['post_content'])) ?>
                 </p>
             </div>
 
