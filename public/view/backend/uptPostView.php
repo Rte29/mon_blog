@@ -34,7 +34,7 @@ include('./public/view/frontend/navigation.php');
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="text">Texte</label>
-                                <textarea id="text" name="text" rows="8" cols="90"><?php echo $post['post_content'] ?></textarea>
+                                <textarea id="text" name="text" rows="8" cols="90"><?php print_r($post['post_content']) ?></textarea>
                                 
                             </div>
                         </div>

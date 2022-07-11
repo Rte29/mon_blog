@@ -22,7 +22,7 @@ include('./public/view/frontend/navigation.php');
                         <div class="form-group"> 
                                 <div class="col-md-4">
                                     <label for="start">Date de début</label>
-                                    <input type="date" class="form-control" placeholder="date de début" name="start" id="start" value="<?= isset($_COOKIE['start']) ? $_COOKIE['start'] : '';?> "required>
+                                    <input type="date" class="form-control" placeholder="date de début" name="start" id="start" value="<?= !empty($_COOKIE['start']) ? $_COOKIE['start'] : '';?> " required>
                                     <p class="help-block text-danger"></p>
                                 </div>
                                

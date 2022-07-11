@@ -9,7 +9,7 @@ include('./public/view/frontend/navigation.php');
         <div class="rows">
             <div class="col-lg-8 col-lg-offset-2">
                 <h1>Pseudo : <?= htmlspecialchars($editUserAll['username']) ?></h1>
-                <h3><?php echo(htmlspecialchars($editUserAll['last_name']) . ' ' . htmlspecialchars($editUserAll['first_name'])) ?></h3>
+                <h3><?= htmlspecialchars($editUserAll['last_name']) . ' ' . htmlspecialchars($editUserAll['first_name']) ?></h3>
                 <h6><em>enregistré le <?= $editUserAll['user_registration_date_fr'] ?> et modifié le <?= $editUserAll['user_update_date_fr'] ?></em></h6><br>
                 <h6>date de naissance: </h6>
                 <p><?= nl2br(htmlspecialchars($editUserAll['birthday_fr'])) ?></p><br>

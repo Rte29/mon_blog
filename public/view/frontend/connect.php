@@ -2,6 +2,9 @@
 
 include('navigation.php');
 ?>
+
+<!-- Login Section -->
+
 <section id="contact">
 <?php
 if (isset($newUser))
@@ -26,7 +29,7 @@ if (isset($newUser))
                         <div class="row control-group">
                             <div class="form-group col-xs-12 controls">
                                 <label for="pseudo">Pseudo</label>
-                                <input type="text" class="form-control"  name="pseudo" placeholder="toto95" id="pseudo" required data-validation-required-message="Merci d'entrer votre pseudo.">
+                                <input type="text" class="form-control"  name="pseudo" placeholder="toto29" id="pseudo" required data-validation-required-message="Merci d'entrer votre pseudo.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>

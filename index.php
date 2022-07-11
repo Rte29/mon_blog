@@ -101,13 +101,18 @@ try {
             accountAdmin();
         }
         elseif ($_GET['action'] == 'lastAccount') {
-            lastAccount();
+                        lastAccount();
         }
         elseif ($_GET['action'] == 'allAccount') {
             allAccount();
         }
         elseif ($_GET['action'] == 'searchAccount') {
-            searchAccount();
+            if(isset($_POST['start']) && isset($_POST['end']))
+            {   setcookie("start", $_POST['start']);
+                setcookie("end", $_POST['end']);
+                searchAccount();
+            }else {
+            searchAccount();}
         }
         elseif ($_GET['action'] == 'editUserAll') {
             editUserAll();
