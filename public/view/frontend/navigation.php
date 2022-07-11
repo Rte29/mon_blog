@@ -48,6 +48,7 @@
             <?php 
             if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1){
             ?>
+            <!-- Admin nav bar -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="hidden">
@@ -69,7 +70,7 @@
                             <a href="index.php?action=disconnect">Deconnexion</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="#"><?php echo$_SESSION['PSEUDO'] ?></a>
+                            <a href="#"><?= $_SESSION['PSEUDO'] ?></a>
                         </li>
                     </ul>
                 </div>
@@ -77,6 +78,7 @@
                 }
                 elseif (isset ($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==0){
             ?>
+            <!-- Log User nav bar -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="hidden">
@@ -104,7 +106,7 @@
                 else{
             ?>
 
-
+            <!-- Non log user nav bar -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="hidden">

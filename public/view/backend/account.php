@@ -8,11 +8,11 @@ if(isset($_SESSION['PSEUDO']) && $_SESSION['ADMIN']==1)
 
     ?>
     <body>
+        <!-- Admin account section-->
         <div class="container">
             <section class="row">
                 <h1>Les derniers enregistrements</h1><br/>
                 <p><a href="index.php?action=lastAccount">Retour ...</a></p>
-                    
                 <div class="row">
                     <div class="pb-3">
                         <?php ob_start(); 

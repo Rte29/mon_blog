@@ -203,7 +203,7 @@ function allAccount()
 
 function editUser()
 {
-    $userId = $_GET['id'];
+    $userId = htmlspecialchars($_GET['id']);
 
     $user = new \Blog\Model\Subscribe();
     $editUser = $user->getUser($userId);

@@ -14,6 +14,7 @@ if (isset($_GET['id'])){
 include('hero.php');
 
 ?>
+<!-- 3 Last Post Section on home page-->
 <body>
 <div class="container">
     <h1>Les derniers billets !</h1>    

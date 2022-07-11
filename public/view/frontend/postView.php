@@ -12,6 +12,7 @@ if (isset($affectedLines))
 
 <?php ob_start(); ?>
 <body>
+    <!-- Edit Post Section -->
     <div class="container">
         <section>
             <h1><?php echo($post['title']) ?></h1>
@@ -23,10 +24,10 @@ if (isset($affectedLines))
                 </h3>
                 
                 <p>
-                    <?= nl2br(htmlspecialchars($post['post_content'])) ?>
+                    <?= nl2br(htmlspecialchars($post['chapo'])) . nl2br(htmlspecialchars($post['post_content'])) ?>
                 </p>
             </div>
-
+    <!-- Comment Section form for log user-->
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 text-center">
@@ -47,7 +48,7 @@ if (isset($affectedLines))
                                 <input type="submit"><br>
                             </div>
                         </form>
-                        
+    <!-- Comment Section info for non log user-->                   
             <?php else : ?>
                 <i>'Pour écrire un commentaire, vous devez vous identifier'</i>
             <?php endif; ?>
@@ -58,6 +59,7 @@ if (isset($affectedLines))
             while ($comment = $comments->fetch())
             {
             ?>
+    <!-- Edit comment Section -->          
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-10 text-center">

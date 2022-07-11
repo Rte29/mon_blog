@@ -1,12 +1,13 @@
 <?php
 session_start();
 
-// Chargement des classes
+// Class loading
 require_once 'model/PostManager.php';
 require_once 'model/CommentManager.php';
 require_once 'model/UserManager.php';
 require_once 'model/LoginManager.php';
 
+// Loading 3 last post on index page
 function listPosts()
 {
     $postManager = new \Blog\Model\PostManager();
@@ -29,6 +30,7 @@ function readAll()
     require 'public/view/backend/postList.php';
     }
 }
+
 
 function post()
 {
@@ -109,7 +111,7 @@ if(empty($message))
     }
     else 
     {
-        echo($message);
+        print_r($message);
         die;
     }
 
@@ -168,11 +170,6 @@ $headers .="From: " . $from . "<br>";
 
 if (mail($to, $subject, $message, $headers))
     {
-        ?>
-        <div class="alert alert-success" role="alert">
-            <h3>Bravo votre message a bien été envoyé. Je vous remercie.</h3>
-        </div>
-        <?php
         header('Location: index.php?action=listPosts&id=1');}
     else
     {
