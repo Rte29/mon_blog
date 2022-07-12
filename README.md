@@ -1,27 +1,83 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Freelancer](http://startbootstrap.com/template-overviews/freelancer/)
+## mon_blog
 
-[Freelancer](http://startbootstrap.com/template-overviews/freelancer/) is a one page freelancer portfolio theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, and a working PHP contact form.
+## informations generales
+Il s'agit du projet 5 de la formation de developeur d application PHP/SYMFONY
+C'est un simple blog avec une partie administration.
+Un Utilisateur peut laisser un commentaire des lors qu'il est enregistre.
+Les commentaires doivent etre valides par un administrateur avant publication.
 
-## Getting Started
+## Technologies
+***
+Ce projet est réalisé avec :
+* [HTML]: Version 5
+* [CSS]: Version 3
+* [PHP]: Version 8.0.13
+* [BOOTSTRAP]: Theme Freelancer
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/freelancer/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-freelancer.git`
-* Fork the repo
+## Installation
+Pour installer le projet en localhost vous devez vous rendre sur le lien suivant : "https://github.com/Rte29/mon_blog.git
+Après avoir copié l'URL du projet qui apparaît lorsque vous appuyez sur le bouton "clone or download", 
+rendez-vous dans l'invite de commande git, ouverte à l'endroit où vous souhaitez placer le projet. 
+Utilisez les commandes : 
+- git clone 'https://github.com/Rte29/mon_blog.git'
+- composer install
+- executer le fichier bdd.sql
 
-## Bugs and Issues
+'URL du projet' = https://github.com/Rte29/mon_blog.git
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-freelancer/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/freelancer/).
+L'installation est terminée.
 
-## Creator
+## Ouverture du projet
+Vous avez besoin d'un serveur php pour ouvrir ce blog. A la racine, ouvrez simplement index.php
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
+## Profils de test
+Données de connexion utilisateurs du site :
 
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
+identifiant : TestUtilisateur1
+mot de passe : testutilisateur
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+identifiant : TestUtilisateur2
+mot de passe : testutilisateur
 
-## Copyright and License
+Données de connexion administrateur du site :
 
-Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-freelancer/blob/gh-pages/LICENSE) license.
+identifiant : TestAdmin
+mot de passe : testadmin
+
+## general infos
+This is project 5 of the PHP/SYMFONY application developer training
+It's a simple blog with an administration part.
+A User can leave a comment as soon as he is registered.
+Comments must be validated by an administrator before publication.
+
+## Technologies
+This project was developed with :
+* [HTML]: Version 5
+* [CSS]: Version 3
+* [PHP]: Version 8.0.13
+* [BOOTSTRAP]: Theme Freelancer
+
+## Instalation
+To install this project in localhost, you must go to : "https://github.com/Rte29/mon_blog.git"
+After copying the project URL shown when you click on "clone and download", navigate to git's command prompt and open it where you want to copy the project to.
+Use commands:
+- git clone 'https://github.com/Rte29/mon_blog.git'
+- composer install
+- execute file bdd.sql
+
+## Start project
+You need php server for start this blog. On a root folder, just open index.php
+
+## test profils
+-- User login for test : 
+
+login : TestUtilisateur1
+pwd : testutilisateur
+
+login : TestUtilisateur2
+pwd : testutilisateur
+
+-- Admin login for test :
+
+login : TestAdmin
+pwd : testadmin
